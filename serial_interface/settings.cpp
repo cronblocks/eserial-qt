@@ -1,13 +1,23 @@
 #include "settings.h"
 
+#include <iostream>
+
 Settings::Settings(QString filename) {
     _filename = filename;
+
+    _uint_values.clear();
+    _int_values.clear();
+    _float_values.clear();
+    _double_values.clear();
+    _qstring_values.clear();
 
     LoadSettings();
 }
 
 void Settings::LoadSettings() {
-    //--
+#if _DEBUGGING_MESSAGES == 1
+    std::cout << "Loading Settings file: " << _filename.toStdString() << std::endl;
+#endif
 }
 
 void Settings::SaveSettings() {

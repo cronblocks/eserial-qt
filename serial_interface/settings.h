@@ -4,10 +4,8 @@
 #include <QMap>
 #include <qstring.h>
 
+class Settings {
 
-
-class Settings
-{
 public:
     Settings(QString filename);
 

@@ -5,13 +5,15 @@
 #include "port_discoverer.h"
 #include "port_communicator.h"
 
+#define SETTINGS_FILENAME "Settings.ini"
+
 class SerialInterface
 {
 public:
     SerialInterface();
 
 private:
-    static Settings _settings;
+    std::unique_ptr<Settings> _settings;
 };
 
 #endif // SERIAL_INTERFACE_H
