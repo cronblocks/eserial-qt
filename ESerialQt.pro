@@ -12,15 +12,15 @@ SOURCES += \
     SerialInterface/serial_interface.cpp \
     SerialInterface/settings.cpp \
     main.cpp \
-    mainwindow.cpp
+    main_window.cpp
 
 HEADERS += \
     SerialInterface/serial_interface.h \
     SerialInterface/settings.h \
-    mainwindow.h
+    main_window.h
 
 FORMS += \
-    mainwindow.ui
+    main_window.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
