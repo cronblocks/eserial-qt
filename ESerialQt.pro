@@ -20,6 +20,7 @@ SOURCES += \
     main_window.cpp
 
 HEADERS += \
+    serial_interface/macros.h \
     serial_interface/port_communicator.h \
     serial_interface/port_discoverer.h \
     serial_interface/serial_interface.h \
