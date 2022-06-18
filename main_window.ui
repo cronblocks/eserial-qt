@@ -23,11 +23,6 @@
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuSerialPort">
-    <property name="title">
-     <string>Serial Port</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuBaudRate">
     <property name="title">
      <string>Baud Rate</string>
@@ -109,7 +104,6 @@
     <addaction name="separator"/>
     <addaction name="actionInterlineDelay_Custom"/>
    </widget>
-   <addaction name="menuSerialPort"/>
    <addaction name="menuBaudRate"/>
    <addaction name="menuDataBits"/>
    <addaction name="menuParity"/>
