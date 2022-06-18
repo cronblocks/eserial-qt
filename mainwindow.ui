@@ -95,9 +95,11 @@
     </property>
     <addaction name="actionInterlineDelay_1ms"/>
     <addaction name="actionInterlineDelay_5ms"/>
+    <addaction name="separator"/>
     <addaction name="actionInterlineDelay_10ms"/>
     <addaction name="actionInterlineDelay_20ms"/>
     <addaction name="actionInterlineDelay_50ms"/>
+    <addaction name="separator"/>
     <addaction name="actionInterlineDelay_100ms"/>
     <addaction name="actionInterlineDelay_200ms"/>
     <addaction name="actionInterlineDelay_500ms"/>
@@ -463,52 +465,52 @@
   </action>
   <action name="actionInterlineDelay_1ms">
    <property name="text">
-    <string>1 millisecond</string>
+    <string>1 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_5ms">
    <property name="text">
-    <string>5 millisecond</string>
+    <string>5 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_10ms">
    <property name="text">
-    <string>10 millisecond</string>
+    <string>10 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_20ms">
    <property name="text">
-    <string>20 millisecond</string>
+    <string>20 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_50ms">
    <property name="text">
-    <string>50 millisecond</string>
+    <string>50 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_100ms">
    <property name="text">
-    <string>100 millisecond</string>
+    <string>100 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_200ms">
    <property name="text">
-    <string>200 millisecond</string>
+    <string>200 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_500ms">
    <property name="text">
-    <string>500 millisecond</string>
+    <string>500 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_1sec">
    <property name="text">
-    <string>1000 millisecond</string>
+    <string>1000 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_2sec">
    <property name="text">
-    <string>2000 millisecond</string>
+    <string>2000 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_Custom">
