@@ -92,6 +92,9 @@
        <layout class="QHBoxLayout" name="transmitTextLayout">
         <item>
          <widget class="QTextEdit" name="transmitTextEdit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -136,6 +139,9 @@
       </item>
       <item>
        <widget class="QProgressBar" name="transmitFileProgressBar">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -153,7 +159,11 @@
      </layout>
     </item>
     <item>
-     <widget class="QTextEdit" name="receivedTextEdit"/>
+     <widget class="QTextEdit" name="receivedTextEdit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="receiveControlLayout">
