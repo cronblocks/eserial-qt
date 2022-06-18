@@ -153,16 +153,16 @@
      <widget class="QTextEdit" name="receivedTextEdit"/>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QHBoxLayout" name="receiveControlLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="receiveTextClearButton">
         <property name="text">
-         <string>PushButton</string>
+         <string>Clear Text</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="receiveDumpFilenameLabel">
         <property name="text">
          <string>TextLabel</string>
         </property>
