@@ -1,5 +1,7 @@
 #include "settings.h"
 
+#include "macros.h"
+
 #include <iostream>
 
 Settings::Settings(QString filename) {
@@ -16,22 +18,16 @@ Settings::Settings(QString filename) {
 }
 
 void Settings::LoadSettings() {
-
-#if _DEBUGGING_MESSAGES == 1
-    std::cout << "Loading Settings file: " << _filename.toStdString();
-#endif
+    DEBUG_MSG("Loading Settings file: ");
+    DEBUG_MSG(_filename.toStdString());
 
     if (_file->exists()) {
 
-#if _DEBUGGING_MESSAGES == 1
-    std::cout << " ... exists" << std::endl;
-#endif
+        DEBUG_MSG_LINE(" ... exists");
 
     } else {
 
-#if _DEBUGGING_MESSAGES == 1
-    std::cout << " ... doesnot exist" << std::endl;
-#endif
+        DEBUG_MSG_LINE(" ... doesnot exist");
 
     }
 }
