@@ -13,6 +13,8 @@ class SerialInterface {
 
 public:
     SerialInterface();
+    void StartInterface();
+    void StopInterface();
 
 private:
     std::unique_ptr<Settings> _settings;
