@@ -2,8 +2,8 @@
 #define PORTCOMMUNICATOR_H
 
 
-class PortCommunicator
-{
+class PortCommunicator {
+
 public:
     PortCommunicator();
 };

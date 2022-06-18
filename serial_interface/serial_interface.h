@@ -9,8 +9,8 @@
 
 #define SETTINGS_FILENAME "Settings.ini"
 
-class SerialInterface
-{
+class SerialInterface {
+
 public:
     SerialInterface();
 

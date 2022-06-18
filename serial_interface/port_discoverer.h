@@ -2,8 +2,8 @@
 #define PORTDISCOVERER_H
 
 
-class PortDiscoverer
-{
+class PortDiscoverer {
+
 public:
     PortDiscoverer();
 };
