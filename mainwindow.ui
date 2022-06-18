@@ -533,56 +533,89 @@
    </property>
   </action>
   <action name="actionInterlineDelay_1ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>1 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_5ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>5 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_10ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>10 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_20ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>20 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_50ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>50 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_100ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>100 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_200ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>200 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_500ms">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>500 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_1sec">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>1000 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_2sec">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>2000 ms</string>
    </property>
   </action>
   <action name="actionInterlineDelay_Custom">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Custom</string>
    </property>
