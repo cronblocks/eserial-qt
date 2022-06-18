@@ -10,5 +10,5 @@ void SerialInterface::StartInterface() {
 }
 
 void SerialInterface::StopInterface() {
-    //--
+    _settings->SaveSettings();
 }

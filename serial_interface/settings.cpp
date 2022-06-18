@@ -18,7 +18,7 @@ Settings::Settings(QString filename) {
 }
 
 void Settings::LoadSettings() {
-    DEBUG_MSG("Loading Settings file: ");
+    DEBUG_MSG("Loading settings file: ");
     DEBUG_MSG(_filename.toStdString());
 
     if (_file->exists()) {
@@ -33,7 +33,8 @@ void Settings::LoadSettings() {
 }
 
 void Settings::SaveSettings() {
-    //--
+    DEBUG_MSG("Saving settings file: ");
+    DEBUG_MSG_LINE(_filename.toStdString());
 }
 
 //------------------
