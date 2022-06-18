@@ -84,10 +84,10 @@
     <property name="title">
      <string>Line Ending</string>
     </property>
-    <addaction name="actionNone_2"/>
-    <addaction name="actionCR_r"/>
-    <addaction name="actionLF_n"/>
-    <addaction name="actionCRLF_r_n"/>
+    <addaction name="actionLineEnding_None"/>
+    <addaction name="actionLineEnding_CR"/>
+    <addaction name="actionLineEnding_LF"/>
+    <addaction name="actionLineEnding_CRLF"/>
    </widget>
    <widget class="QMenu" name="menuInterlineDelay">
     <property name="title">
@@ -441,22 +441,22 @@
     <string>2</string>
    </property>
   </action>
-  <action name="actionNone_2">
+  <action name="actionLineEnding_None">
    <property name="text">
     <string>None</string>
    </property>
   </action>
-  <action name="actionCR_r">
+  <action name="actionLineEnding_CR">
    <property name="text">
     <string>CR - \r</string>
    </property>
   </action>
-  <action name="actionLF_n">
+  <action name="actionLineEnding_LF">
    <property name="text">
     <string>LF - \n</string>
    </property>
   </action>
-  <action name="actionCRLF_r_n">
+  <action name="actionLineEnding_CRLF">
    <property name="text">
     <string>CRLF - \r\n</string>
    </property>
