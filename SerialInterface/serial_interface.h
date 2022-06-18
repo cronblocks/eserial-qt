@@ -2,6 +2,7 @@
 #define SERIAL_INTERFACE_H
 
 #include "settings.h"
+#include "port_discoverer.h"
 
 class SerialInterface
 {
