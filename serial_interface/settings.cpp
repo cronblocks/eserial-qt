@@ -8,11 +8,7 @@ Settings::Settings(QString filename) {
     _filename = filename;
     _file = std::make_unique<QFile>(_filename);
 
-    _uint_values.clear();
-    _int_values.clear();
-    _float_values.clear();
-    _double_values.clear();
-    _qstring_values.clear();
+    _settings.clear();
 
     LoadSettings();
 }
