@@ -30,6 +30,7 @@ public:
     QString GetQStringValue(QString key);
 
 private:
+    QString _filename;
     QMap<QString, unsigned int> _uint_values;
     QMap<QString, int> _int_values;
     QMap<QString, float> _float_values;

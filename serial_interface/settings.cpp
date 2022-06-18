@@ -1,7 +1,9 @@
 #include "settings.h"
 
 Settings::Settings(QString filename) {
-    //--
+    _filename = filename;
+
+    LoadSettings();
 }
 
 void Settings::LoadSettings() {
