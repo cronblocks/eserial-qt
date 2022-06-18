@@ -483,16 +483,25 @@
    </property>
   </action>
   <action name="actionParity_None">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>None</string>
    </property>
   </action>
   <action name="actionParity_Even">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Even</string>
    </property>
   </action>
   <action name="actionParity_Odd">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Odd</string>
    </property>
