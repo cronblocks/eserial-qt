@@ -299,96 +299,153 @@
    </property>
   </action>
   <action name="actionBaudRate_300">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>300</string>
    </property>
   </action>
   <action name="actionBaudRate_600">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>600</string>
    </property>
   </action>
   <action name="actionBaudRate_1200">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>1200</string>
    </property>
   </action>
   <action name="actionBaudRate_1800">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>1800</string>
    </property>
   </action>
   <action name="actionBaudRate_2400">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>2400</string>
    </property>
   </action>
   <action name="actionBaudRate_4800">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>4800</string>
    </property>
   </action>
   <action name="actionBaudRate_7200">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>7200</string>
    </property>
   </action>
   <action name="actionBaudRate_9600">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>9600</string>
    </property>
   </action>
   <action name="actionBaudRate_14400">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>14,400</string>
    </property>
   </action>
   <action name="actionBaudRate_19200">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>19,200</string>
    </property>
   </action>
   <action name="actionBaudRate_38400">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>38,400</string>
    </property>
   </action>
   <action name="actionBaudRate_57600">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>57,600</string>
    </property>
   </action>
   <action name="actionBaudRate_115200">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>115,200</string>
    </property>
   </action>
   <action name="actionBaudRate_28800">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>28,800</string>
    </property>
   </action>
   <action name="actionBaudRate_230400">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>230,400</string>
    </property>
   </action>
   <action name="actionBaudRate_460800">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>460,800</string>
    </property>
   </action>
   <action name="actionBaudRate_921600">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>921,600</string>
    </property>
   </action>
   <action name="actionBaudRate_1M">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>1,000,000</string>
    </property>
   </action>
   <action name="actionBaudRate_2M">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>2,000,000</string>
    </property>
