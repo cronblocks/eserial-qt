@@ -513,21 +513,33 @@
    </property>
   </action>
   <action name="actionLineEnding_None">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>None</string>
    </property>
   </action>
   <action name="actionLineEnding_CR">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>CR - \r</string>
    </property>
   </action>
   <action name="actionLineEnding_LF">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>LF - \n</string>
    </property>
   </action>
   <action name="actionLineEnding_CRLF">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>CRLF - \r\n</string>
    </property>
