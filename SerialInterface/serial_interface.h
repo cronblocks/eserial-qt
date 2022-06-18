@@ -3,6 +3,7 @@
 
 #include "settings.h"
 #include "port_discoverer.h"
+#include "port_communicator.h"
 
 class SerialInterface
 {
