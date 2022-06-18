@@ -4,6 +4,7 @@
 
 Settings::Settings(QString filename) {
     _filename = filename;
+    _file = std::make_unique<QFile>(_filename);
 
     _uint_values.clear();
     _int_values.clear();
