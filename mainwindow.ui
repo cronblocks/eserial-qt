@@ -32,28 +32,28 @@
     <property name="title">
      <string>Baud Rate</string>
     </property>
-    <addaction name="action300_2"/>
-    <addaction name="action600"/>
-    <addaction name="action1200_2"/>
-    <addaction name="action1800"/>
-    <addaction name="action2400_2"/>
-    <addaction name="action4800_2"/>
-    <addaction name="action7200"/>
-    <addaction name="action9600_3"/>
+    <addaction name="actionBaudRate_300"/>
+    <addaction name="actionBaudRate_600"/>
+    <addaction name="actionBaudRate_1200"/>
+    <addaction name="actionBaudRate_1800"/>
+    <addaction name="actionBaudRate_2400"/>
+    <addaction name="actionBaudRate_4800"/>
+    <addaction name="actionBaudRate_7200"/>
+    <addaction name="actionBaudRate_9600"/>
     <addaction name="separator"/>
-    <addaction name="action14_400"/>
-    <addaction name="action19_200"/>
-    <addaction name="action28_800"/>
-    <addaction name="action38_400"/>
-    <addaction name="action57_601"/>
+    <addaction name="actionBaudRate_14400"/>
+    <addaction name="actionBaudRate_19200"/>
+    <addaction name="actionBaudRate_28800"/>
+    <addaction name="actionBaudRate_38400"/>
+    <addaction name="actionBaudRate_57600"/>
     <addaction name="separator"/>
-    <addaction name="action115_201"/>
-    <addaction name="action230_400"/>
-    <addaction name="action460_800"/>
-    <addaction name="action921_600"/>
+    <addaction name="actionBaudRate_115200"/>
+    <addaction name="actionBaudRate_230400"/>
+    <addaction name="actionBaudRate_460800"/>
+    <addaction name="actionBaudRate_921600"/>
     <addaction name="separator"/>
-    <addaction name="action1_000_000"/>
-    <addaction name="action2_000_1"/>
+    <addaction name="actionBaudRate_1M"/>
+    <addaction name="actionBaudRate_2M"/>
    </widget>
    <widget class="QMenu" name="menuDataBits">
     <property name="title">
@@ -296,97 +296,97 @@
     <string>115,200</string>
    </property>
   </action>
-  <action name="action300_2">
+  <action name="actionBaudRate_300">
    <property name="text">
     <string>300</string>
    </property>
   </action>
-  <action name="action600">
+  <action name="actionBaudRate_600">
    <property name="text">
     <string>600</string>
    </property>
   </action>
-  <action name="action1200_2">
+  <action name="actionBaudRate_1200">
    <property name="text">
     <string>1200</string>
    </property>
   </action>
-  <action name="action1800">
+  <action name="actionBaudRate_1800">
    <property name="text">
     <string>1800</string>
    </property>
   </action>
-  <action name="action2400_2">
+  <action name="actionBaudRate_2400">
    <property name="text">
     <string>2400</string>
    </property>
   </action>
-  <action name="action4800_2">
+  <action name="actionBaudRate_4800">
    <property name="text">
     <string>4800</string>
    </property>
   </action>
-  <action name="action7200">
+  <action name="actionBaudRate_7200">
    <property name="text">
     <string>7200</string>
    </property>
   </action>
-  <action name="action9600_3">
+  <action name="actionBaudRate_9600">
    <property name="text">
     <string>9600</string>
    </property>
   </action>
-  <action name="action14_400">
+  <action name="actionBaudRate_14400">
    <property name="text">
     <string>14,400</string>
    </property>
   </action>
-  <action name="action19_200">
+  <action name="actionBaudRate_19200">
    <property name="text">
     <string>19,200</string>
    </property>
   </action>
-  <action name="action38_400">
+  <action name="actionBaudRate_38400">
    <property name="text">
     <string>38,400</string>
    </property>
   </action>
-  <action name="action57_601">
+  <action name="actionBaudRate_57600">
    <property name="text">
     <string>57,600</string>
    </property>
   </action>
-  <action name="action115_201">
+  <action name="actionBaudRate_115200">
    <property name="text">
     <string>115,200</string>
    </property>
   </action>
-  <action name="action28_800">
+  <action name="actionBaudRate_28800">
    <property name="text">
     <string>28,800</string>
    </property>
   </action>
-  <action name="action230_400">
+  <action name="actionBaudRate_230400">
    <property name="text">
     <string>230,400</string>
    </property>
   </action>
-  <action name="action460_800">
+  <action name="actionBaudRate_460800">
    <property name="text">
     <string>460,800</string>
    </property>
   </action>
-  <action name="action921_600">
+  <action name="actionBaudRate_921600">
    <property name="text">
     <string>921,600</string>
    </property>
   </action>
-  <action name="action1_000_000">
+  <action name="actionBaudRate_1M">
    <property name="text">
     <string>1,000,000</string>
    </property>
   </action>
-  <action name="action2_000_1">
+  <action name="actionBaudRate_2M">
    <property name="text">
     <string>2,000,000</string>
    </property>
