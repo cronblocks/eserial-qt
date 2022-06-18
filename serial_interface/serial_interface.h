@@ -5,6 +5,8 @@
 #include "port_discoverer.h"
 #include "port_communicator.h"
 
+#include <memory>
+
 #define SETTINGS_FILENAME "Settings.ini"
 
 class SerialInterface
