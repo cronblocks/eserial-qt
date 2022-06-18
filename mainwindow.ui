@@ -451,21 +451,33 @@
    </property>
   </action>
   <action name="actionDataBits_5">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>5</string>
    </property>
   </action>
   <action name="actionDataBits_6">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>6</string>
    </property>
   </action>
   <action name="actionDataBits_7">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>7</string>
    </property>
   </action>
   <action name="actionDataBits_8">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>8</string>
    </property>
