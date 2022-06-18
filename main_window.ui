@@ -150,7 +150,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QTextEdit" name="textEdit_2"/>
+     <widget class="QTextEdit" name="receivedTextEdit"/>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
