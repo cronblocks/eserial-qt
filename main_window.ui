@@ -124,6 +124,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="transmitTextSendFileButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="text">
            <string>Send File</string>
           </property>
@@ -156,6 +159,9 @@
      <layout class="QHBoxLayout" name="receiveControlLayout">
       <item>
        <widget class="QPushButton" name="receiveTextClearButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>Clear Text</string>
         </property>
@@ -164,7 +170,7 @@
       <item>
        <widget class="QLabel" name="receiveDumpFilenameLabel">
         <property name="text">
-         <string>TextLabel</string>
+         <string>...</string>
         </property>
        </widget>
       </item>
