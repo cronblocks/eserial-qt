@@ -16,9 +16,24 @@ Settings::Settings(QString filename) {
 }
 
 void Settings::LoadSettings() {
+
 #if _DEBUGGING_MESSAGES == 1
-    std::cout << "Loading Settings file: " << _filename.toStdString() << std::endl;
+    std::cout << "Loading Settings file: " << _filename.toStdString();
 #endif
+
+    if (_file->exists()) {
+
+#if _DEBUGGING_MESSAGES == 1
+    std::cout << " ... exists" << std::endl;
+#endif
+
+    } else {
+
+#if _DEBUGGING_MESSAGES == 1
+    std::cout << " ... doesnot exist" << std::endl;
+#endif
+
+    }
 }
 
 void Settings::SaveSettings() {
