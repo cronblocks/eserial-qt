@@ -7,11 +7,20 @@ SerialInterface::SerialInterface() {
     m_discvr_ptr   = new PortDiscoverer();
     m_comm_ptr     = nullptr;
 
-    m_baud_rate   = BaudRate::_115200;
-    m_data_bits   = DataBits::_8;
-    m_parity      = Parity::None;
-    m_stop_bits   = StopBits::One;
-    m_line_ending = LineEnding::LF;
+    m_baud_rate = static_cast<BaudRate>(
+                m_settings_ptr->getIntValue("", static_cast<int>(BaudRate::_115200)));
+
+    m_data_bits = static_cast<DataBits>(
+                m_settings_ptr->getIntValue("", static_cast<int>(DataBits::_8)));
+
+    m_parity = static_cast<Parity>(
+                m_settings_ptr->getIntValue("", static_cast<int>(Parity::None)));
+
+    m_stop_bits = static_cast<StopBits>(
+                m_settings_ptr->getIntValue("", static_cast<int>(StopBits::One)));
+
+    m_line_ending = static_cast<LineEnding>(
+                m_settings_ptr->getIntValue("", static_cast<int>(LineEnding::LF)));
 
     // --------------
     // Connectors
