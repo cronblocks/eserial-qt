@@ -24,6 +24,7 @@ private:
 
     std::unique_ptr<SerialInterface> m_serial;
 
+    void setupUiButtonClickReceivers();
     void setupUiActionReceivers();
 
     void onUiBaudRateActionTriggered(bool checked);

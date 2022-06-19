@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     setUiLineEnding     ( m_serial->getLineEnding()     );
     setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
+    setupUiButtonClickReceivers();
     setupUiActionReceivers();
 
     m_serial->startInterface();
@@ -28,6 +29,10 @@ MainWindow::~MainWindow() {
 // -------------------------------
 // Setting-up Events
 // ----------------------------
+void MainWindow::setupUiButtonClickReceivers() {
+    //--
+}
+
 void MainWindow::setupUiActionReceivers() {
     // -----------------------
     // Baud Rates
