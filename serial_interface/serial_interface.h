@@ -2,6 +2,7 @@
 #define SERIAL_INTERFACE_H
 
 
+#include "serial_types.h"
 #include "settings.h"
 #include "port_discoverer.h"
 #include "port_communicator.h"
@@ -31,6 +32,12 @@ private:
     Settings         *m_settings_ptr;
     PortDiscoverer   *m_discvr_ptr;
     PortCommunicator *m_comm_ptr;
+
+    BaudRate   m_baud_rate;
+    DataBits   m_data_bits;
+    Parity     m_parity;
+    StopBits   m_stop_bits;
+    LineEnding m_line_ending;
 };
 
 #endif // SERIAL_INTERFACE_H
