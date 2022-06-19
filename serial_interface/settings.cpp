@@ -112,7 +112,7 @@ double Settings::getDoubleValue(const QString& key, double default_value) {
 
 QString Settings::getQStringValue(const QString& key, const QString& default_value) {
     if (m_settings.contains(key)) {
-        return m_settings[key];
+        return QString(m_settings[key]);
     }
 
     return default_value;
