@@ -73,7 +73,11 @@ void SerialInterface::stopInterface() {
 }
 
 void SerialInterface::startSerialPort() {
-    //
+    if (m_serial_port.isNull() || m_serial_port.isEmpty()) {
+        emit errorOccurred("Undefined Serial Port");
+    } else {
+        //
+    }
 }
 
 void SerialInterface::stopSerialPort() {
