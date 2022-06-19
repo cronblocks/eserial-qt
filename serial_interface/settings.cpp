@@ -3,6 +3,7 @@
 #include "macros.h"
 
 #include <QFile>
+#include <QTextStream>
 
 #include <iostream>
 #include <memory>
@@ -18,11 +19,22 @@ void Settings::loadSettings() {
     DEBUG_MSG("Loading settings file: ");
     DEBUG_MSG(m_filename.toStdString());
 
-    std::unique_ptr<QFile> file = std::make_unique<QFile>(m_filename);
+    QFile file = QFile(m_filename);
 
-    if (file->exists()) {
+    if (file.exists()) {
 
         DEBUG_MSG_LINE(" ... exists");
+
+        if (file.open(QIODevice::ReadOnly)) {
+            QTextStream stream = QTextStream(&file);
+
+            while (!stream.atEnd()) {
+                QString line = stream.readLine();
+                DEBUG_MSG_LINE(line.toStdString());
+            }
+
+            file.close();
+        }
 
     } else {
 
@@ -35,7 +47,21 @@ void Settings::saveSettings() {
     DEBUG_MSG("Saving settings file: ");
     DEBUG_MSG_LINE(m_filename.toStdString());
 
-    std::unique_ptr<QFile> file = std::make_unique<QFile>(m_filename);
+    QFile file = QFile(m_filename);
+
+    if (file.open(QIODevice::WriteOnly)) {
+        QTextStream stream = QTextStream(&file);
+
+        QMapIterator<QString, QString> iterator(m_settings);
+
+        while (iterator.hasNext()) {
+            iterator.next();
+            stream << iterator.key() << " = " << iterator.value() << Qt::endl;
+        }
+
+        stream.flush();
+        file.close();
+    }
 }
 
 //------------------
