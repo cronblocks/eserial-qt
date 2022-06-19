@@ -2,7 +2,16 @@
 #define PORTDISCOVERER_H
 
 
-class PortDiscoverer {
+#include <QObject>
+
+
+class PortDiscoverer : public QObject {
+
+    Q_OBJECT
+
+signals:
+    void serialPortAdded(QString&);
+    void serialPortRemoved(QString&);
 
 public:
     PortDiscoverer();
