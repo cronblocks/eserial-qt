@@ -238,8 +238,8 @@ void MainWindow::onUiInterlineDelayActionTriggered(bool checked) {
 // -------------------------------
 // Handling Events - Serial Port
 // ----------------------------
-void MainWindow::onSerialPortAdded(const QString&) {
-    //--
+void MainWindow::onSerialPortAdded(const QString& port_name) {
+    ui->serialPortComboBox->addItem(port_name);
 }
 
 void MainWindow::onSerialPortRemoved(const QString&) {
