@@ -19,6 +19,9 @@ signals:
 public:
     PortCommunicator(const QString&, BaudRate, DataBits, Parity, StopBits);
 
+    void startReception();
+    void stopReception();
+
 private:
     QString      m_serial_port;
     BaudRate     m_baud_rate;

@@ -17,3 +17,11 @@ PortCommunicator::PortCommunicator(
     m_parity      = parity;
     m_stop_bits   = stop_bits;
 }
+
+void PortCommunicator::startReception() {
+    //
+}
+
+void PortCommunicator::stopReception() {
+    //
+}
