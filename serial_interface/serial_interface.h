@@ -25,8 +25,21 @@ signals:
 
 public:
     SerialInterface();
+
     void startInterface();
     void stopInterface();
+
+    void setBaudRate(BaudRate);
+    void setDataBits(DataBits);
+    void setParity(Parity);
+    void setStopBits(StopBits);
+    void setLineEnding(LineEnding);
+
+    BaudRate   getBaudRate();
+    DataBits   getDataBits();
+    Parity     getParity();
+    StopBits   getStopBits();
+    LineEnding getLineEnding();
 
 private:
     Settings         *m_settings_ptr;

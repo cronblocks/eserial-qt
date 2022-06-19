@@ -62,3 +62,46 @@ void SerialInterface::stopInterface() {
     m_discvr_ptr->stopDiscoveringPorts();
     m_settings_ptr->saveSettings();
 }
+
+// ----------------------
+// Getters / Setters
+// -------------------
+void SerialInterface::setBaudRate(BaudRate baud_rate) {
+    m_baud_rate = baud_rate;
+}
+
+void SerialInterface::setDataBits(DataBits data_bits) {
+    m_data_bits = data_bits;
+}
+
+void SerialInterface::setParity(Parity parity) {
+    m_parity = parity;
+}
+
+void SerialInterface::setStopBits(StopBits stop_bits) {
+    m_stop_bits = stop_bits;
+}
+
+void SerialInterface::setLineEnding(LineEnding line_ending) {
+    m_line_ending = line_ending;
+}
+
+BaudRate SerialInterface::getBaudRate() {
+    return m_baud_rate;
+}
+
+DataBits SerialInterface::getDataBits() {
+    return m_data_bits;
+}
+
+Parity SerialInterface::getParity() {
+    return m_parity;
+}
+
+StopBits SerialInterface::getStopBits() {
+    return m_stop_bits;
+}
+
+LineEnding SerialInterface::getLineEnding() {
+    return m_line_ending;
+}
