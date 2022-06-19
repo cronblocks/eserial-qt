@@ -68,7 +68,14 @@ unsigned int Settings::getUIntValue(const QString& key, unsigned int default_val
 }
 
 int Settings::getIntValue(const QString& key, int default_value) {
-    //--
+    bool is_ok;
+    int return_value;
+
+    if (m_settings.contains(key)) {
+        return_value = m_settings[key].toInt(&is_ok);
+        if (is_ok) return return_value;
+    }
+
     return default_value;
 }
 
