@@ -5,13 +5,19 @@ SerialInterface::SerialInterface() {
     _discoverer = new PortDiscoverer();
     _communicator = nullptr;
 
+    // --------------
+    // Connectors
+    // ------------
     connect(_discoverer, &PortDiscoverer::serialPortAdded,
-            this, &SerialInterface::serialPortAdded);
+            this,        &SerialInterface::serialPortAdded);
+
+    connect(_discoverer, &PortDiscoverer::serialPortRemoved,
+            this,        &SerialInterface::serialPortRemoved);
 }
 
-// -----------------
-// Interface controls
-// --------------
+// ----------------------
+// Interface control
+// -------------------
 void SerialInterface::startInterface() {
     //--
 }
