@@ -29,6 +29,7 @@ public:
     void startInterface();
     void stopInterface();
 
+    void setSerialPort(const QString&);
     void setBaudRate(BaudRate);
     void setDataBits(DataBits);
     void setParity(Parity);

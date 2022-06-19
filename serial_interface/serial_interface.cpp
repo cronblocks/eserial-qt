@@ -73,6 +73,10 @@ void SerialInterface::stopInterface() {
 // ----------------------
 // Setters
 // -------------------
+void SerialInterface::setSerialPort(const QString&) {
+    //
+}
+
 void SerialInterface::setBaudRate(BaudRate baud_rate) {
     m_baud_rate = baud_rate;
 }
