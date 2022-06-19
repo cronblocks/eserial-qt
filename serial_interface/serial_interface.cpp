@@ -77,7 +77,7 @@ void SerialInterface::startSerialPort() {
         emit errorOccurred("Undefined Serial Port");
     } else {
         if (m_comm_ptr == nullptr) {
-            m_comm_ptr = new PortCommunicator();
+            m_comm_ptr = new PortCommunicator(m_serial_port, m_baud_rate, m_data_bits, m_parity, m_stop_bits);
         } else {
             emit errorOccurred("Serial Port already opened");
         }
