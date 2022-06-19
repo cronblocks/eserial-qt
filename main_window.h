@@ -29,14 +29,14 @@ private:
     void setupUiParityReceiver();
     void setupUiStopBitsReceiver();
     void setupUiLineEndingReceiver();
-    void setupUiInterlinedelayReceiver();
+    void setupUiInterlineDelayReceiver();
 
     void actionTriggeredUiBaudRateReceiver(bool checked);
     void actionTriggeredUiDataBitsReceiver(bool checked);
     void actionTriggeredUiParityReceiver(bool checked);
     void actionTriggeredUiStopBitsReceiver(bool checked);
     void actionTriggeredUiLineEndingReceiver(bool checked);
-    void actionTriggeredUiInterlinedelayReceiver(bool checked);
+    void actionTriggeredUiInterlineDelayReceiver(bool checked);
 
     void setUiBaudRate(BaudRate);
     void setUiDataBits(DataBits);

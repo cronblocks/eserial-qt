@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     setupUiParityReceiver();
     setupUiStopBitsReceiver();
     setupUiLineEndingReceiver();
-    setupUiInterlinedelayReceiver();
+    setupUiInterlineDelayReceiver();
 
     m_serial->startInterface();
 }
@@ -81,8 +81,18 @@ void MainWindow::setupUiLineEndingReceiver() {
     connect(ui->actionLineEnding_CRLF, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
 }
 
-void MainWindow::setupUiInterlinedelayReceiver() {
-    //--
+void MainWindow::setupUiInterlineDelayReceiver() {
+    connect(ui->actionInterlineDelay_1ms,    &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_5ms,    &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_10ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_20ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_50ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_100ms,  &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_200ms,  &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_500ms,  &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_1sec,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_2sec,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_Custom, &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
 }
 
 // -------------------------------
@@ -167,7 +177,7 @@ void MainWindow::actionTriggeredUiLineEndingReceiver(bool checked) {
     setUiLineEnding(m_serial->getLineEnding());
 }
 
-void MainWindow::actionTriggeredUiInterlinedelayReceiver(bool checked) {
+void MainWindow::actionTriggeredUiInterlineDelayReceiver(bool checked) {
     //--
 }
 
