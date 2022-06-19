@@ -16,12 +16,12 @@ MainWindow::MainWindow(QWidget *parent)
     setUiLineEnding     ( m_serial->getLineEnding()     );
     setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
-    setUiBaudRateReceiver();
-    setUiDataBitsReceiver();
-    setUiParityReceiver();
-    setUiStopBitsReceiver();
-    setUiLineEndingReceiver();
-    setUiInterlinedelayReceiver();
+    setupUiBaudRateReceiver();
+    setupUiDataBitsReceiver();
+    setupUiParityReceiver();
+    setupUiStopBitsReceiver();
+    setupUiLineEndingReceiver();
+    setupUiInterlinedelayReceiver();
 
     m_serial->startInterface();
 }
@@ -33,27 +33,27 @@ MainWindow::~MainWindow() {
 // -------------------------------
 // Setting-up Events
 // ----------------------------
-void MainWindow::setUiBaudRateReceiver() {
+void MainWindow::setupUiBaudRateReceiver() {
     //--
 }
 
-void MainWindow::setUiDataBitsReceiver() {
+void MainWindow::setupUiDataBitsReceiver() {
     //--
 }
 
-void MainWindow::setUiParityReceiver() {
+void MainWindow::setupUiParityReceiver() {
     //--
 }
 
-void MainWindow::setUiStopBitsReceiver() {
+void MainWindow::setupUiStopBitsReceiver() {
     //--
 }
 
-void MainWindow::setUiLineEndingReceiver() {
+void MainWindow::setupUiLineEndingReceiver() {
     //--
 }
 
-void MainWindow::setUiInterlinedelayReceiver() {
+void MainWindow::setupUiInterlinedelayReceiver() {
     //--
 }
 
