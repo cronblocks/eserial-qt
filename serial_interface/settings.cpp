@@ -40,7 +40,11 @@ void Settings::saveSettings() {
 // Setters
 //---------------
 void Settings::setUIntValue(const QString& key, unsigned int value) {
-    //--
+    if (m_settings.contains(key)) {
+        m_settings.remove(key);
+    }
+
+    m_settings.insert(key, QString::number(value));
 }
 
 void Settings::setIntValue(const QString& key, int value) {
