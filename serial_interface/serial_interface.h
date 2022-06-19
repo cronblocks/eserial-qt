@@ -46,11 +46,12 @@ private:
     PortDiscoverer   *m_discvr_ptr;
     PortCommunicator *m_comm_ptr;
 
-    BaudRate   m_baud_rate;
-    DataBits   m_data_bits;
-    Parity     m_parity;
-    StopBits   m_stop_bits;
-    LineEnding m_line_ending;
+    BaudRate     m_baud_rate;
+    DataBits     m_data_bits;
+    Parity       m_parity;
+    StopBits     m_stop_bits;
+    LineEnding   m_line_ending;
+    unsigned int m_interline_delay_ms;
 };
 
 #endif // SERIAL_INTERFACE_H
