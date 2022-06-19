@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connectUiButtonClickReceivers();
     connectUiActionReceivers();
-    connectSerialPortReceivers();
+    connectSerialPortSignals();
 
     m_serial->startInterface();
 }
@@ -107,7 +107,7 @@ void MainWindow::connectUiActionReceivers() {
     connect(ui->actionInterlineDelay_Custom, &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
 }
 
-void MainWindow::connectSerialPortReceivers() {
+void MainWindow::connectSerialPortSignals() {
     //
 }
 
