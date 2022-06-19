@@ -53,6 +53,12 @@ void SerialInterface::startInterface() {
 }
 
 void SerialInterface::stopInterface() {
+    m_settings_ptr->setIntValue( SETTING_KEY_BAUD_RATE,   static_cast<int>( m_baud_rate   ));
+    m_settings_ptr->setIntValue( SETTING_KEY_DATA_BITS,   static_cast<int>( m_data_bits   ));
+    m_settings_ptr->setIntValue( SETTING_KEY_PARITY,      static_cast<int>( m_parity      ));
+    m_settings_ptr->setIntValue( SETTING_KEY_STOP_BITS,   static_cast<int>( m_stop_bits   ));
+    m_settings_ptr->setIntValue( SETTING_KEY_LINE_ENDING, static_cast<int>( m_line_ending ));
+
     m_discvr_ptr->stopDiscoveringPorts();
     m_settings_ptr->saveSettings();
 }
