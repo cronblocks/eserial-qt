@@ -10,8 +10,8 @@ class PortCommunicator : public QObject {
     Q_OBJECT
 
 signals:
-    void dataReceived(QString&);
-    void errorOccurred(QString&);
+    void dataReceived(const QString&);
+    void errorOccurred(const QString&);
 
 public:
     PortCommunicator();
