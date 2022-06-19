@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     serialInterface = std::make_unique<SerialInterface>();
-    serialInterface->StartInterface();
+    serialInterface->startInterface();
 }
 
 MainWindow::~MainWindow() {
@@ -19,6 +19,6 @@ MainWindow::~MainWindow() {
 // Handling Events
 // ----------------------------
 void MainWindow::closeEvent(QCloseEvent *) {
-    serialInterface->StopInterface();
+    serialInterface->stopInterface();
 }
 
