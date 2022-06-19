@@ -36,18 +36,23 @@ void PortDiscoverer::stopDiscoveringPorts() {
 void PortDiscoverer::findPorts() {
     for (QSerialPortInfo& info : QSerialPortInfo::availablePorts()) {
 
+        QString port_desc = info.description().trimmed();
+        if (port_desc == "") { port_desc = "_"; }
+
+        QString port_full_name = info.portName().trimmed() + " (" + port_desc + ")";
+
         bool already_exists = false;
 
         for (QString& available_name : m_available_ports) {
-            if (info.portName() == available_name) {
+            if (port_full_name == available_name) {
                 already_exists = true;
                 break;
             }
         }
 
         if (!already_exists) {
-            m_available_ports.push_back(QString(info.portName()));
-            emit serialPortAdded(QString(info.portName()));
+            m_available_ports.push_back(port_full_name);
+            emit serialPortAdded(port_full_name);
         }
     }
 }
