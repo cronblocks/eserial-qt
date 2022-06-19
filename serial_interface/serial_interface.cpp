@@ -85,7 +85,12 @@ void SerialInterface::startSerialPort() {
 }
 
 void SerialInterface::stopSerialPort() {
-    //
+    if (m_comm_ptr == nullptr) {
+        emit errorOccurred("Serial Port not opened");
+    } else {
+        delete(m_comm_ptr);
+        m_comm_ptr = nullptr;
+    }
 }
 
 // ----------------------
