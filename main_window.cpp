@@ -16,8 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     setUiLineEnding     ( m_serial->getLineEnding()     );
     setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
-    connectUiButtonClickReceivers();
-    connectUiActionReceivers();
+    connectUiEventReceivers();
     connectSerialPortSignals();
 
     m_serial->startInterface();
@@ -30,16 +29,17 @@ MainWindow::~MainWindow() {
 // -------------------------------
 // Setting-up Events
 // ----------------------------
-void MainWindow::connectUiButtonClickReceivers() {
+void MainWindow::connectUiEventReceivers() {
+    // -----------------------
+    // Buttons
+    // ---------------------
     connect(ui->serialPortStartButton,      &QPushButton::clicked, this, &MainWindow::onUiSerialPortStartButtonClicked);
     connect(ui->transmitTextSendButton,     &QPushButton::clicked, this, &MainWindow::onUiTransmitTextSendButtonClicked);
     connect(ui->transmitTextSendFileButton, &QPushButton::clicked, this, &MainWindow::onUiTransmitTextSendFileButtonClicked);
     connect(ui->receiveTextClearButton,     &QPushButton::clicked, this, &MainWindow::onUiReceiveTextClearButtonClicked);
-}
 
-void MainWindow::connectUiActionReceivers() {
     // -----------------------
-    // Baud Rates
+    // Action Triggers - Baud Rates
     // ---------------------
     connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
     connect(ui->actionBaudRate_600,    &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
@@ -62,7 +62,7 @@ void MainWindow::connectUiActionReceivers() {
     connect(ui->actionBaudRate_2M,     &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
 
     // -----------------------
-    // Data Bits
+    // Action Triggers - Data Bits
     // ---------------------
     connect(ui->actionDataBits_5, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
     connect(ui->actionDataBits_6, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
@@ -70,21 +70,21 @@ void MainWindow::connectUiActionReceivers() {
     connect(ui->actionDataBits_8, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
 
     // -----------------------
-    // Parity
+    // Action Triggers - Parity
     // ---------------------
     connect(ui->actionParity_None, &QAction::triggered, this, &MainWindow::onUiParityActionTriggered);
     connect(ui->actionParity_Even, &QAction::triggered, this, &MainWindow::onUiParityActionTriggered);
     connect(ui->actionParity_Odd,  &QAction::triggered, this, &MainWindow::onUiParityActionTriggered);
 
     // -----------------------
-    // Stop Bits
+    // Action Triggers - Stop Bits
     // ---------------------
     connect(ui->actionStopBits_1,   &QAction::triggered, this, &MainWindow::onUiStopBitsActionTriggered);
     connect(ui->actionStopBits_1_5, &QAction::triggered, this, &MainWindow::onUiStopBitsActionTriggered);
     connect(ui->actionStopBits_2,   &QAction::triggered, this, &MainWindow::onUiStopBitsActionTriggered);
 
     // -----------------------
-    // Line Ending
+    // Action Triggers - Line Ending
     // ---------------------
     connect(ui->actionLineEnding_None, &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
     connect(ui->actionLineEnding_CR,   &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
@@ -92,7 +92,7 @@ void MainWindow::connectUiActionReceivers() {
     connect(ui->actionLineEnding_CRLF, &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
 
     // -----------------------
-    // Inter-line Delays
+    // Action Triggers - Inter-line Delays
     // ---------------------
     connect(ui->actionInterlineDelay_1ms,    &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
     connect(ui->actionInterlineDelay_5ms,    &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);

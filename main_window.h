@@ -23,8 +23,7 @@ private:
     Ui::MainWindow *ui;
     SerialInterface *m_serial;
 
-    void connectUiButtonClickReceivers();
-    void connectUiActionReceivers();
+    void connectUiEventReceivers();
     void connectSerialPortSignals();
 
     void onUiSerialPortStartButtonClicked();
