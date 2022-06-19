@@ -78,6 +78,12 @@ void SerialInterface::startSerialPort() {
     } else {
         if (m_comm_ptr == nullptr) {
             m_comm_ptr = new PortCommunicator(m_serial_port, m_baud_rate, m_data_bits, m_parity, m_stop_bits);
+
+            connect(m_comm_ptr, &PortCommunicator::dataReceived,
+                    this,       &SerialInterface::dataReceived);
+
+            connect(m_comm_ptr, &PortCommunicator::errorOccurred,
+                    this,       &SerialInterface::errorOccurred);
         } else {
             emit errorOccurred("Serial Port already opened");
         }
