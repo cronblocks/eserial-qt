@@ -3,6 +3,7 @@
 
 
 #include <QObject>
+#include <QTimer>
 
 #include <list>
 
@@ -22,6 +23,7 @@ public:
 
 private:
     std::list<QString> m_available_ports;
+    QTimer *m_timer;
 };
 
 #endif // PORTDISCOVERER_H
