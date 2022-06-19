@@ -24,8 +24,8 @@ private:
 
     std::unique_ptr<SerialInterface> m_serial;
 
-    void setupUiButtonClickReceivers();
-    void setupUiActionReceivers();
+    void connectUiButtonClickReceivers();
+    void connectUiActionReceivers();
 
     void onUiSerialPortStartButtonClicked();
     void onUiTransmitTextSendButtonClicked();

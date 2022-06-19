@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     setUiLineEnding     ( m_serial->getLineEnding()     );
     setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
-    setupUiButtonClickReceivers();
-    setupUiActionReceivers();
+    connectUiButtonClickReceivers();
+    connectUiActionReceivers();
 
     m_serial->startInterface();
 }
@@ -29,14 +29,14 @@ MainWindow::~MainWindow() {
 // -------------------------------
 // Setting-up Events
 // ----------------------------
-void MainWindow::setupUiButtonClickReceivers() {
+void MainWindow::connectUiButtonClickReceivers() {
     connect(ui->serialPortStartButton,      &QPushButton::clicked, this, &MainWindow::onUiSerialPortStartButtonClicked);
     connect(ui->transmitTextSendButton,     &QPushButton::clicked, this, &MainWindow::onUiTransmitTextSendButtonClicked);
     connect(ui->transmitTextSendFileButton, &QPushButton::clicked, this, &MainWindow::onUiTransmitTextSendFileButtonClicked);
     connect(ui->receiveTextClearButton,     &QPushButton::clicked, this, &MainWindow::onUiReceiveTextClearButtonClicked);
 }
 
-void MainWindow::setupUiActionReceivers() {
+void MainWindow::connectUiActionReceivers() {
     // -----------------------
     // Baud Rates
     // ---------------------
