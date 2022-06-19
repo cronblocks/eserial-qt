@@ -19,9 +19,10 @@ SerialInterface::SerialInterface() {
 // Interface control
 // -------------------
 void SerialInterface::startInterface() {
-    //--
+    m_discvr_ptr->startDiscoveringPorts();
 }
 
 void SerialInterface::stopInterface() {
+    m_discvr_ptr->stopDiscoveringPorts();
     m_settings_ptr->SaveSettings();
 }
