@@ -299,6 +299,11 @@
    <addaction name="menuInterlineDelay"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="statusTip">
     <string/>
    </property>
