@@ -143,7 +143,7 @@ void MainWindow::onUiTransmitTextSendFileButtonClicked() {
 }
 
 void MainWindow::onUiReceiveTextClearButtonClicked() {
-    //--
+    ui->receivedTextEdit->clear();
 }
 
 // -------------------------------
