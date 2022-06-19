@@ -34,6 +34,8 @@ void PortDiscoverer::stopDiscoveringPorts() {
 // Port Discovery
 // ---------------
 void PortDiscoverer::findPorts() {
+
+    // Checking for new ones
     for (QSerialPortInfo& info : QSerialPortInfo::availablePorts()) {
 
         QString port_desc = info.description().trimmed();
@@ -55,4 +57,6 @@ void PortDiscoverer::findPorts() {
             emit serialPortAdded(port_full_name);
         }
     }
+
+    // Checking for removed ones
 }
