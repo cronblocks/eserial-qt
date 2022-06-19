@@ -30,7 +30,10 @@ MainWindow::~MainWindow() {
 // Setting-up Events
 // ----------------------------
 void MainWindow::setupUiButtonClickReceivers() {
-    //--
+    connect(ui->serialPortStartButton,      &QPushButton::clicked, this, &MainWindow::onUiSerialPortStartButtonClicked);
+    connect(ui->transmitTextSendButton,     &QPushButton::clicked, this, &MainWindow::onUiTransmitTextSendButtonClicked);
+    connect(ui->transmitTextSendFileButton, &QPushButton::clicked, this, &MainWindow::onUiTransmitTextSendFileButtonClicked);
+    connect(ui->receiveTextClearButton,     &QPushButton::clicked, this, &MainWindow::onUiReceiveTextClearButtonClicked);
 }
 
 void MainWindow::setupUiActionReceivers() {
@@ -110,6 +113,28 @@ void MainWindow::closeEvent(QCloseEvent *) {
     m_serial->stopInterface();
 }
 
+// -------------------------------
+// Handling Events - Button Clicks
+// ----------------------------
+void MainWindow::onUiSerialPortStartButtonClicked() {
+    //--
+}
+
+void MainWindow::onUiTransmitTextSendButtonClicked() {
+    //--
+}
+
+void MainWindow::onUiTransmitTextSendFileButtonClicked() {
+    //--
+}
+
+void MainWindow::onUiReceiveTextClearButtonClicked() {
+    //--
+}
+
+// -------------------------------
+// Handling Events - Menu Actions
+// ----------------------------
 void MainWindow::onUiBaudRateActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     BaudRate baud_rate = static_cast<BaudRate>(action->text().remove(',').remove(' ').toInt());

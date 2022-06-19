@@ -27,6 +27,11 @@ private:
     void setupUiButtonClickReceivers();
     void setupUiActionReceivers();
 
+    void onUiSerialPortStartButtonClicked();
+    void onUiTransmitTextSendButtonClicked();
+    void onUiTransmitTextSendFileButtonClicked();
+    void onUiReceiveTextClearButtonClicked();
+
     void onUiBaudRateActionTriggered(bool checked);
     void onUiDataBitsActionTriggered(bool checked);
     void onUiParityActionTriggered(bool checked);
