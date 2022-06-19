@@ -2,22 +2,25 @@
 
 #include "macros.h"
 
+#include <QFile>
+
 #include <iostream>
+#include <memory>
 
 Settings::Settings(QString filename) {
-    _filename = filename;
-    _file = std::make_unique<QFile>(_filename);
-
-    _settings.clear();
+    m_filename = filename;
+    m_settings.clear();
 
     loadSettings();
 }
 
 void Settings::loadSettings() {
-    DEBUG_MSG("Loading settings file: ");
-    DEBUG_MSG(_filename.toStdString());
+    std::unique_ptr<QFile> file = std::make_unique<QFile>(m_filename);
 
-    if (_file->exists()) {
+    DEBUG_MSG("Loading settings file: ");
+    DEBUG_MSG(m_filename.toStdString());
+
+    if (file->exists()) {
 
         DEBUG_MSG_LINE(" ... exists");
 
@@ -30,56 +33,56 @@ void Settings::loadSettings() {
 
 void Settings::saveSettings() {
     DEBUG_MSG("Saving settings file: ");
-    DEBUG_MSG_LINE(_filename.toStdString());
+    DEBUG_MSG_LINE(m_filename.toStdString());
 }
 
 //------------------
 // Setters
 //---------------
-void Settings::SetUIntValue(QString key, unsigned int value) {
+void Settings::setUIntValue(QString key, unsigned int value) {
     //--
 }
 
-void Settings::SetIntValue(QString key, int value) {
+void Settings::setIntValue(QString key, int value) {
     //--
 }
 
-void Settings::SetFloatValue(QString key, float value) {
+void Settings::setFloatValue(QString key, float value) {
     //--
 }
 
-void Settings::SetDoubleValue(QString key, double value) {
+void Settings::setDoubleValue(QString key, double value) {
     //--
 }
 
-void Settings::SetQStringValue(QString key, QString value) {
+void Settings::setQStringValue(QString key, QString value) {
     //--
 }
 
 //------------------
 // Getters
 //---------------
-unsigned int Settings::GetUIntValue(QString key) {
+unsigned int Settings::getUIntValue(QString key) {
     //--
     return 0;
 }
 
-int Settings::GetIntValue(QString key) {
+int Settings::getIntValue(QString key) {
     //--
     return 0;
 }
 
-float Settings::GetFloatValue(QString key) {
+float Settings::getFloatValue(QString key) {
     //--
     return 0;
 }
 
-double Settings::GetDoubleValue(QString key) {
+double Settings::getDoubleValue(QString key) {
     //--
     return 0;
 }
 
-QString Settings::GetQStringValue(QString key) {
+QString Settings::getQStringValue(QString key) {
     //--
     return "";
 }

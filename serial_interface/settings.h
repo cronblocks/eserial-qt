@@ -1,11 +1,10 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+
 #include <QMap>
-#include <QFile>
 #include <qstring.h>
 
-#include <memory>
 
 class Settings {
 
@@ -18,22 +17,21 @@ private:
 public:
     void saveSettings();
 
-    void SetUIntValue(QString key, unsigned int value);
-    void SetIntValue(QString key, int value);
-    void SetFloatValue(QString key, float value);
-    void SetDoubleValue(QString key, double value);
-    void SetQStringValue(QString key, QString value);
+    void setUIntValue(QString key, unsigned int value);
+    void setIntValue(QString key, int value);
+    void setFloatValue(QString key, float value);
+    void setDoubleValue(QString key, double value);
+    void setQStringValue(QString key, QString value);
 
-    unsigned int GetUIntValue(QString key);
-    int GetIntValue(QString key);
-    float GetFloatValue(QString key);
-    double GetDoubleValue(QString key);
-    QString GetQStringValue(QString key);
+    unsigned int getUIntValue(QString key);
+    int getIntValue(QString key);
+    float getFloatValue(QString key);
+    double getDoubleValue(QString key);
+    QString getQStringValue(QString key);
 
 private:
-    QString _filename;
-    std::unique_ptr<QFile> _file;
-    QMap<QString, QString> _settings;
+    QString m_filename;
+    QMap<QString, QString> m_settings;
 };
 
 #endif // SETTINGS_H
