@@ -1,6 +1,7 @@
 #ifndef SERIAL_INTERFACE_H
 #define SERIAL_INTERFACE_H
 
+
 #include "settings.h"
 #include "port_discoverer.h"
 #include "port_communicator.h"
