@@ -52,7 +52,11 @@ void Settings::setFloatValue(const QString& key, float value) {
 }
 
 void Settings::setDoubleValue(const QString& key, double value) {
-    //--
+    if (m_settings.contains(key)) {
+        m_settings.remove(key);
+    }
+
+    m_settings.insert(key, QString::number(value));
 }
 
 void Settings::setQStringValue(const QString& key, QString&& value) {
