@@ -30,6 +30,7 @@ MainWindow::~MainWindow() {
 // Setting-up Events
 // ----------------------------
 void MainWindow::connectUiEventReceivers() {
+
     // -----------------------
     // Buttons
     // ---------------------
