@@ -25,7 +25,7 @@ private:
     std::list<QString> m_available_ports;
     QTimer *m_timer;
 
-    void findPorts();
+    void enumeratePorts();
 };
 
 #endif // PORTDISCOVERER_H

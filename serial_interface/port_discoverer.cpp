@@ -12,7 +12,7 @@ PortDiscoverer::PortDiscoverer() {
     m_timer = new QTimer(this);
     m_timer->setInterval(PORT_ENUMERATION_INTERVAL_MS);
 
-    connect(m_timer, &QTimer::timeout, this, &PortDiscoverer::findPorts);
+    connect(m_timer, &QTimer::timeout, this, &PortDiscoverer::enumeratePorts);
 }
 
 // -----------------
@@ -41,7 +41,7 @@ static QString getPortNameWithDescription(const QSerialPortInfo& port_info) {
     return port_info.portName().trimmed() + port_desc;
 }
 
-void PortDiscoverer::findPorts() {
+void PortDiscoverer::enumeratePorts() {
 
     // Checking for new ones
     for (QSerialPortInfo& info : QSerialPortInfo::availablePorts()) {
