@@ -40,6 +40,11 @@ private:
     void onUiLineEndingActionTriggered(bool checked);
     void onUiInterlineDelayActionTriggered(bool checked);
 
+    void onSerialPortAdded(const QString&);
+    void onSerialPortRemoved(const QString&);
+    void onSerialPortDataReceived(const QString&);
+    void onSerialPortErrorOccurred(const QString&);
+
     void setUiBaudRate(BaudRate);
     void setUiDataBits(DataBits);
     void setUiParity(Parity);

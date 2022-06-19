@@ -233,6 +233,25 @@ void MainWindow::onUiInterlineDelayActionTriggered(bool checked) {
 }
 
 // -------------------------------
+// Handling Events - Serial Port
+// ----------------------------
+void MainWindow::onSerialPortAdded(const QString&) {
+    //--
+}
+
+void MainWindow::onSerialPortRemoved(const QString&) {
+    //--
+}
+
+void MainWindow::onSerialPortDataReceived(const QString&) {
+    //--
+}
+
+void MainWindow::onSerialPortErrorOccurred(const QString&) {
+    //--
+}
+
+// -------------------------------
 // Setting-up GUI Elements
 // ----------------------------
 void MainWindow::setUiBaudRate(BaudRate baud_rate) {
