@@ -36,9 +36,9 @@ void PortDiscoverer::stopDiscoveringPorts() {
 static QString getPortNameWithDescription(const QSerialPortInfo& port_info) {
     QString port_desc = port_info.description().trimmed();
 
-    if (port_desc == "") { port_desc = "_"; }
+    if (port_desc != "") { port_desc = " (" + port_desc + ")"; }
 
-    return port_info.portName().trimmed() + " (" + port_desc + ")";
+    return port_info.portName().trimmed() + port_desc;
 }
 
 void PortDiscoverer::findPorts() {
