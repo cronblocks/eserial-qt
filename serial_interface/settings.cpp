@@ -56,7 +56,11 @@ void Settings::setDoubleValue(const QString& key, double value) {
 }
 
 void Settings::setQStringValue(const QString& key, QString&& value) {
-    //--
+    if (m_settings.contains(key)) {
+        m_settings.remove(key);
+    }
+
+    m_settings.insert(key, value);
 }
 
 //------------------
