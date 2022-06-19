@@ -72,7 +72,9 @@ void MainWindow::setUiParity(Parity parity) {
 }
 
 void MainWindow::setUiStopBits(StopBits stop_bits) {
-    //--
+    ui->actionStopBits_1->setChecked(stop_bits == StopBits::One);
+    ui->actionStopBits_1_5->setChecked(stop_bits == StopBits::OnePtFive);
+    ui->actionStopBits_2->setChecked(stop_bits == StopBits::Two);
 }
 
 void MainWindow::setUiLineEnding(LineEnding line_ending) {
