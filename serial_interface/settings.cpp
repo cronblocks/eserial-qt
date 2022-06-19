@@ -73,17 +73,24 @@ int Settings::getIntValue(const QString& key, int default_value) {
 }
 
 float Settings::getFloatValue(const QString& key, float default_value) {
-    //--
+    bool is_ok;
+    float return_value;
+
+    if (m_settings.contains(key)) {
+        return_value = m_settings[key].toFloat(&is_ok);
+        if (is_ok) return return_value;
+    }
+
     return default_value;
 }
 
 double Settings::getDoubleValue(const QString& key, double default_value) {
-    bool ok;
+    bool is_ok;
     double return_value;
 
     if (m_settings.contains(key)) {
-        return_value = m_settings[key].toDouble(&ok);
-        if (ok) return return_value;
+        return_value = m_settings[key].toDouble(&is_ok);
+        if (is_ok) return return_value;
     }
 
     return default_value;
