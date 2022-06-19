@@ -278,8 +278,8 @@ void MainWindow::onSerialPortDataReceived(const QString& text) {
     ui->receivedTextEdit->append(text);
 }
 
-void MainWindow::onSerialPortErrorOccurred(const QString&) {
-    //--
+void MainWindow::onSerialPortErrorOccurred(const QString& error_message) {
+    ui->statusbar->showMessage(error_message);
 }
 
 // -------------------------------
