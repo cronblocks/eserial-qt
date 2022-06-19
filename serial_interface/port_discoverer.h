@@ -4,6 +4,8 @@
 
 #include <QObject>
 
+#include <list>
+
 
 class PortDiscoverer : public QObject {
 
@@ -15,6 +17,11 @@ signals:
 
 public:
     PortDiscoverer();
+    void startDiscoveringPorts();
+    void stopDiscoveringPorts();
+
+private:
+    std::list<QString> m_available_ports;
 };
 
 #endif // PORTDISCOVERER_H

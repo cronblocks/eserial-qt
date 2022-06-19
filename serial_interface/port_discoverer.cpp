@@ -5,3 +5,14 @@
 PortDiscoverer::PortDiscoverer() {
 
 }
+
+// -----------------
+// Operations
+// ---------------
+void PortDiscoverer::startDiscoveringPorts() {
+    //--
+}
+
+void PortDiscoverer::stopDiscoveringPorts() {
+    //--
+}
