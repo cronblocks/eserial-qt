@@ -2,6 +2,8 @@
 
 #include "macros.h"
 
+#include <QRegularExpression>
+
 
 #define SETTING_KEY_BAUD_RATE           "BaudRate"
 #define SETTING_KEY_DATA_BITS           "DataBits"
@@ -73,8 +75,8 @@ void SerialInterface::stopInterface() {
 // ----------------------
 // Setters
 // -------------------
-void SerialInterface::setSerialPort(const QString&) {
-    //
+void SerialInterface::setSerialPort(const QString& port_name) {
+    QString cleaned_port_name = QString(port_name).remove(QRegularExpression("\\(.*$")).trimmed();
 }
 
 void SerialInterface::setBaudRate(BaudRate baud_rate) {
