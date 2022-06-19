@@ -170,7 +170,7 @@
       <item>
        <widget class="QPushButton" name="receiveTextClearButton">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="text">
          <string>Clear Text</string>
