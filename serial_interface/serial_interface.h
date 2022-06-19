@@ -8,6 +8,7 @@
 #include "port_communicator.h"
 
 #include <QObject>
+#include <QString>
 
 
 #define SETTINGS_FILENAME "Settings.ini"
