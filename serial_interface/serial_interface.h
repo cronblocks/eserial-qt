@@ -30,7 +30,9 @@ public:
     void stopInterface();
 
 private:
-    std::unique_ptr<Settings> _settings;
+    std::unique_ptr<Settings>         _settings;
+    std::unique_ptr<PortDiscoverer>   _discoverer;
+    std::unique_ptr<PortCommunicator> _communicator;
 };
 
 #endif // SERIAL_INTERFACE_H
