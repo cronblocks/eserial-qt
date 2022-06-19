@@ -85,6 +85,55 @@ void MainWindow::setUiLineEnding(LineEnding line_ending) {
     ui->actionLineEnding_CRLF->setChecked(line_ending == LineEnding::CRLF);
 }
 
+/*
+
+    QAction *;*/
 void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
-    //
+
+    if ( delay_ms == 1    ||
+         delay_ms == 5    ||
+         delay_ms == 10   ||
+         delay_ms == 20   ||
+         delay_ms == 50   ||
+         delay_ms == 100  ||
+         delay_ms == 200  ||
+         delay_ms == 500  ||
+         delay_ms == 1000 ||
+         delay_ms == 2000 ) {
+
+        ui->actionInterlineDelay_1ms->setChecked(delay_ms == 1);
+        ui->actionInterlineDelay_5ms->setChecked(delay_ms == 5);
+
+        ui->actionInterlineDelay_10ms->setChecked(delay_ms == 10);
+        ui->actionInterlineDelay_20ms->setChecked(delay_ms == 20);
+        ui->actionInterlineDelay_50ms->setChecked(delay_ms == 50);
+
+        ui->actionInterlineDelay_100ms->setChecked(delay_ms == 100);
+        ui->actionInterlineDelay_200ms->setChecked(delay_ms == 200);
+        ui->actionInterlineDelay_500ms->setChecked(delay_ms == 500);
+
+        ui->actionInterlineDelay_1sec->setChecked(delay_ms == 1000);
+        ui->actionInterlineDelay_2sec->setChecked(delay_ms == 2000);
+
+        ui->actionInterlineDelay_Custom->setChecked(false);
+
+    } else {
+
+        ui->actionInterlineDelay_1ms->setChecked(false);
+        ui->actionInterlineDelay_5ms->setChecked(false);
+
+        ui->actionInterlineDelay_10ms->setChecked(false);
+        ui->actionInterlineDelay_20ms->setChecked(false);
+        ui->actionInterlineDelay_50ms->setChecked(false);
+
+        ui->actionInterlineDelay_100ms->setChecked(false);
+        ui->actionInterlineDelay_200ms->setChecked(false);
+        ui->actionInterlineDelay_500ms->setChecked(false);
+
+        ui->actionInterlineDelay_1sec->setChecked(false);
+        ui->actionInterlineDelay_2sec->setChecked(false);
+
+        ui->actionInterlineDelay_Custom->setChecked(true);
+
+    }
 }
