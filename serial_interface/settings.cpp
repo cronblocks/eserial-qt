@@ -48,7 +48,11 @@ void Settings::setIntValue(const QString& key, int value) {
 }
 
 void Settings::setFloatValue(const QString& key, float value) {
-    //--
+    if (m_settings.contains(key)) {
+        m_settings.remove(key);
+    }
+
+    m_settings.insert(key, QString::number(value));
 }
 
 void Settings::setDoubleValue(const QString& key, double value) {
