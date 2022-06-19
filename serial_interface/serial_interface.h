@@ -5,11 +5,23 @@
 #include "port_discoverer.h"
 #include "port_communicator.h"
 
+#include <QObject>
+
 #include <memory>
+
 
 #define SETTINGS_FILENAME "Settings.ini"
 
-class SerialInterface {
+
+class SerialInterface : public QObject {
+
+    Q_OBJECT
+
+signals:
+    void serialPortAdded(QString&);
+    void serialPortRemoved(QString&);
+    void dataReceived(QString&);
+    void errorOccurred(QString&);
 
 public:
     SerialInterface();
