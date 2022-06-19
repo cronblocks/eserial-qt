@@ -24,6 +24,7 @@ HEADERS += \
     serial_interface/port_communicator.h \
     serial_interface/port_discoverer.h \
     serial_interface/serial_interface.h \
+    serial_interface/serial_types.h \
     serial_interface/settings.h \
     main_window.h
 
