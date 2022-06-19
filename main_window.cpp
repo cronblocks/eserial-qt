@@ -63,7 +63,9 @@ void MainWindow::setupUiDataBitsReceiver() {
 }
 
 void MainWindow::setupUiParityReceiver() {
-    //--
+    connect(ui->actionParity_None, &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
+    connect(ui->actionParity_Even, &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
+    connect(ui->actionParity_Odd,  &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
 }
 
 void MainWindow::setupUiStopBitsReceiver() {
@@ -108,7 +110,20 @@ void MainWindow::actionTriggeredUiDataBitsReceiver(bool checked) {
 }
 
 void MainWindow::actionTriggeredUiParityReceiver(bool checked) {
-    //--
+    QAction *action = (QAction *)sender();
+    QString parity_str = action->text().trimmed().remove(' ').toLower();
+
+    if (checked) {
+        if (parity_str == "none") {
+            m_serial->setParity(Parity::None);
+        } else if (parity_str == "even") {
+            m_serial->setParity(Parity::Even);
+        } else if (parity_str == "odd") {
+            m_serial->setParity(Parity::Odd);
+        }
+    }
+
+    setUiParity(m_serial->getParity());
 }
 
 void MainWindow::actionTriggeredUiStopBitsReceiver(bool checked) {
