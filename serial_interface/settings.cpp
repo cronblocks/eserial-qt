@@ -78,7 +78,14 @@ float Settings::getFloatValue(const QString& key, float default_value) {
 }
 
 double Settings::getDoubleValue(const QString& key, double default_value) {
-    //--
+    bool ok;
+    double return_value;
+
+    if (m_settings.contains(key)) {
+        return_value = m_settings[key].toDouble(&ok);
+        if (ok) return return_value;
+    }
+
     return default_value;
 }
 
