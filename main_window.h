@@ -26,12 +26,12 @@ private:
 
     void setupUiActionReceivers();
 
-    void actionTriggeredUiBaudRateReceiver(bool checked);
-    void actionTriggeredUiDataBitsReceiver(bool checked);
-    void actionTriggeredUiParityReceiver(bool checked);
-    void actionTriggeredUiStopBitsReceiver(bool checked);
-    void actionTriggeredUiLineEndingReceiver(bool checked);
-    void actionTriggeredUiInterlineDelayReceiver(bool checked);
+    void onUiBaudRateActionTriggered(bool checked);
+    void onUiDataBitsActionTriggered(bool checked);
+    void onUiParityActionTriggered(bool checked);
+    void onUiStopBitsActionTriggered(bool checked);
+    void onUiLineEndingActionTriggered(bool checked);
+    void onUiInterlineDelayActionTriggered(bool checked);
 
     void setUiBaudRate(BaudRate);
     void setUiDataBits(DataBits);

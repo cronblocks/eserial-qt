@@ -32,70 +32,70 @@ void MainWindow::setupUiActionReceivers() {
     // -----------------------
     // Baud Rates
     // ---------------------
-    connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_600,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_1200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_1800,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_2400,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_4800,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_7200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_9600,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_14400,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_19200,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_28800,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_38400,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_57600,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_115200, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_230400, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_460800, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_921600, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_1M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-    connect(ui->actionBaudRate_2M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_600,    &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_1200,   &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_1800,   &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_2400,   &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_4800,   &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_7200,   &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_9600,   &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_14400,  &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_19200,  &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_28800,  &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_38400,  &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_57600,  &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_115200, &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_230400, &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_460800, &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_921600, &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_1M,     &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
+    connect(ui->actionBaudRate_2M,     &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
 
     // -----------------------
     // Data Bits
     // ---------------------
-    connect(ui->actionDataBits_5, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
-    connect(ui->actionDataBits_6, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
-    connect(ui->actionDataBits_7, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
-    connect(ui->actionDataBits_8, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
+    connect(ui->actionDataBits_5, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
+    connect(ui->actionDataBits_6, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
+    connect(ui->actionDataBits_7, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
+    connect(ui->actionDataBits_8, &QAction::triggered, this, &MainWindow::onUiDataBitsActionTriggered);
 
     // -----------------------
     // Parity
     // ---------------------
-    connect(ui->actionParity_None, &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
-    connect(ui->actionParity_Even, &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
-    connect(ui->actionParity_Odd,  &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
+    connect(ui->actionParity_None, &QAction::triggered, this, &MainWindow::onUiParityActionTriggered);
+    connect(ui->actionParity_Even, &QAction::triggered, this, &MainWindow::onUiParityActionTriggered);
+    connect(ui->actionParity_Odd,  &QAction::triggered, this, &MainWindow::onUiParityActionTriggered);
 
     // -----------------------
     // Stop Bits
     // ---------------------
-    connect(ui->actionStopBits_1,   &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
-    connect(ui->actionStopBits_1_5, &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
-    connect(ui->actionStopBits_2,   &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
+    connect(ui->actionStopBits_1,   &QAction::triggered, this, &MainWindow::onUiStopBitsActionTriggered);
+    connect(ui->actionStopBits_1_5, &QAction::triggered, this, &MainWindow::onUiStopBitsActionTriggered);
+    connect(ui->actionStopBits_2,   &QAction::triggered, this, &MainWindow::onUiStopBitsActionTriggered);
 
     // -----------------------
     // Line Ending
     // ---------------------
-    connect(ui->actionLineEnding_None, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
-    connect(ui->actionLineEnding_CR,   &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
-    connect(ui->actionLineEnding_LF,   &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
-    connect(ui->actionLineEnding_CRLF, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
+    connect(ui->actionLineEnding_None, &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
+    connect(ui->actionLineEnding_CR,   &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
+    connect(ui->actionLineEnding_LF,   &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
+    connect(ui->actionLineEnding_CRLF, &QAction::triggered, this, &MainWindow::onUiLineEndingActionTriggered);
 
     // -----------------------
     // Inter-line Delays
     // ---------------------
-    connect(ui->actionInterlineDelay_1ms,    &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_5ms,    &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_10ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_20ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_50ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_100ms,  &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_200ms,  &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_500ms,  &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_1sec,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_2sec,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
-    connect(ui->actionInterlineDelay_Custom, &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
+    connect(ui->actionInterlineDelay_1ms,    &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_5ms,    &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_10ms,   &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_20ms,   &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_50ms,   &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_100ms,  &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_200ms,  &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_500ms,  &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_1sec,   &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_2sec,   &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
+    connect(ui->actionInterlineDelay_Custom, &QAction::triggered, this, &MainWindow::onUiInterlineDelayActionTriggered);
 }
 
 // -------------------------------
@@ -105,7 +105,7 @@ void MainWindow::closeEvent(QCloseEvent *) {
     m_serial->stopInterface();
 }
 
-void MainWindow::actionTriggeredUiBaudRateReceiver(bool checked) {
+void MainWindow::onUiBaudRateActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     BaudRate baud_rate = static_cast<BaudRate>(action->text().remove(',').remove(' ').toInt());
 
@@ -116,7 +116,7 @@ void MainWindow::actionTriggeredUiBaudRateReceiver(bool checked) {
     setUiBaudRate(m_serial->getBaudRate());
 }
 
-void MainWindow::actionTriggeredUiDataBitsReceiver(bool checked) {
+void MainWindow::onUiDataBitsActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     DataBits data_bits = static_cast<DataBits>(action->text().remove(',').remove(' ').toInt());
 
@@ -127,7 +127,7 @@ void MainWindow::actionTriggeredUiDataBitsReceiver(bool checked) {
     setUiDataBits(m_serial->getDataBits());
 }
 
-void MainWindow::actionTriggeredUiParityReceiver(bool checked) {
+void MainWindow::onUiParityActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     QString parity_str = action->text().trimmed().remove(' ').toLower();
 
@@ -144,7 +144,7 @@ void MainWindow::actionTriggeredUiParityReceiver(bool checked) {
     setUiParity(m_serial->getParity());
 }
 
-void MainWindow::actionTriggeredUiStopBitsReceiver(bool checked) {
+void MainWindow::onUiStopBitsActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     float stop_bits = action->text().trimmed().remove(' ').toFloat();
 
@@ -161,7 +161,7 @@ void MainWindow::actionTriggeredUiStopBitsReceiver(bool checked) {
     setUiStopBits(m_serial->getStopBits());
 }
 
-void MainWindow::actionTriggeredUiLineEndingReceiver(bool checked) {
+void MainWindow::onUiLineEndingActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     QString line_ending = action->text().remove(QRegularExpression(" .*$")).trimmed().toLower();
 
@@ -180,7 +180,7 @@ void MainWindow::actionTriggeredUiLineEndingReceiver(bool checked) {
     setUiLineEnding(m_serial->getLineEnding());
 }
 
-void MainWindow::actionTriggeredUiInterlineDelayReceiver(bool checked) {
+void MainWindow::onUiInterlineDelayActionTriggered(bool checked) {
     QAction *action = (QAction *)sender();
     QString delay_str = action->text().trimmed().remove(QRegularExpression(" .*$")).trimmed().toLower();
 
