@@ -24,6 +24,13 @@ private:
 
     std::unique_ptr<SerialInterface> m_serial;
 
+    void setUiBaudRateReceiver();
+    void setUiDataBitsReceiver();
+    void setUiParityReceiver();
+    void setUiStopBitsReceiver();
+    void setUiLineEndingReceiver();
+    void setUiInterlinedelayReceiver();
+
     void setUiBaudRate(BaudRate);
     void setUiDataBits(DataBits);
     void setUiParity(Parity);

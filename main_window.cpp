@@ -16,11 +16,45 @@ MainWindow::MainWindow(QWidget *parent)
     setUiLineEnding     ( m_serial->getLineEnding()     );
     setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
+    setUiBaudRateReceiver();
+    setUiDataBitsReceiver();
+    setUiParityReceiver();
+    setUiStopBitsReceiver();
+    setUiLineEndingReceiver();
+    setUiInterlinedelayReceiver();
+
     m_serial->startInterface();
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+}
+
+// -------------------------------
+// Setting-up Events
+// ----------------------------
+void MainWindow::setUiBaudRateReceiver() {
+    //--
+}
+
+void MainWindow::setUiDataBitsReceiver() {
+    //--
+}
+
+void MainWindow::setUiParityReceiver() {
+    //--
+}
+
+void MainWindow::setUiStopBitsReceiver() {
+    //--
+}
+
+void MainWindow::setUiLineEndingReceiver() {
+    //--
+}
+
+void MainWindow::setUiInterlinedelayReceiver() {
+    //--
 }
 
 // -------------------------------
@@ -85,9 +119,6 @@ void MainWindow::setUiLineEnding(LineEnding line_ending) {
     ui->actionLineEnding_CRLF->setChecked(line_ending == LineEnding::CRLF);
 }
 
-/*
-
-    QAction *;*/
 void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
 
     if ( delay_ms == 1    ||
