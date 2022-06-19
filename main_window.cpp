@@ -40,6 +40,11 @@ void MainWindow::connectUiEventReceivers() {
     connect(ui->receiveTextClearButton,     &QPushButton::clicked, this, &MainWindow::onUiReceiveTextClearButtonClicked);
 
     // -----------------------
+    // ComboBox - Serial Port
+    // ---------------------
+    connect(ui->serialPortComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onUiSerialPortComboBoxSelectionChanged);
+
+    // -----------------------
     // Action Triggers - Baud Rates
     // ---------------------
     connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
@@ -139,6 +144,23 @@ void MainWindow::onUiTransmitTextSendFileButtonClicked() {
 
 void MainWindow::onUiReceiveTextClearButtonClicked() {
     //--
+}
+
+// -------------------------------
+// Handling Events - Combo Box
+// ----------------------------
+void MainWindow::onUiSerialPortComboBoxSelectionChanged() {
+    if (ui->serialPortComboBox->count() > 0) {
+        ui->serialPortStartButton->setEnabled(true);
+        ui->transmitTextSendButton->setEnabled(false);
+        ui->transmitTextSendFileButton->setEnabled(false);
+
+        m_serial->setSerialPort(ui->serialPortComboBox->currentText());
+    } else {
+        ui->serialPortStartButton->setEnabled(false);
+        ui->transmitTextSendButton->setEnabled(false);
+        ui->transmitTextSendFileButton->setEnabled(false);
+    }
 }
 
 // -------------------------------

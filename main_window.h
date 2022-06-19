@@ -31,6 +31,8 @@ private:
     void onUiTransmitTextSendFileButtonClicked();
     void onUiReceiveTextClearButtonClicked();
 
+    void onUiSerialPortComboBoxSelectionChanged();
+
     void onUiBaudRateActionTriggered(bool checked);
     void onUiDataBitsActionTriggered(bool checked);
     void onUiParityActionTriggered(bool checked);
