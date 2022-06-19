@@ -1,7 +1,6 @@
 #ifndef MAIN_WINDOW_H
 #define MAIN_WINDOW_H
 
-#include <memory>
 #include <QMainWindow>
 
 #include "serial_interface/serial_interface.h"
