@@ -13,8 +13,8 @@ class PortDiscoverer : public QObject {
     Q_OBJECT
 
 signals:
-    void serialPortAdded(QString&);
-    void serialPortRemoved(QString&);
+    void serialPortAdded(const QString&);
+    void serialPortRemoved(const QString&);
 
 public:
     PortDiscoverer();

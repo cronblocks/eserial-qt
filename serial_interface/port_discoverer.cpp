@@ -34,5 +34,20 @@ void PortDiscoverer::stopDiscoveringPorts() {
 // Port Discovery
 // ---------------
 void PortDiscoverer::findPorts() {
-    //
+    for (QSerialPortInfo& info : QSerialPortInfo::availablePorts()) {
+
+        bool already_exists = false;
+
+        for (QString& available_name : m_available_ports) {
+            if (info.portName() == available_name) {
+                already_exists = true;
+                break;
+            }
+        }
+
+        if (!already_exists) {
+            m_available_ports.push_back(QString(info.portName()));
+            emit serialPortAdded(QString(info.portName()));
+        }
+    }
 }
