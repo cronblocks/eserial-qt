@@ -26,6 +26,7 @@ private:
 
     void connectUiButtonClickReceivers();
     void connectUiActionReceivers();
+    void connectSerialPortReceivers();
 
     void onUiSerialPortStartButtonClicked();
     void onUiTransmitTextSendButtonClicked();
