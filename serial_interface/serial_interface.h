@@ -28,9 +28,9 @@ public:
     void stopInterface();
 
 private:
-    Settings         *_settings;
-    PortDiscoverer   *_discoverer;
-    PortCommunicator *_communicator;
+    Settings         *m_settings_ptr;
+    PortDiscoverer   *m_discvr_ptr;
+    PortCommunicator *m_comm_ptr;
 };
 
 #endif // SERIAL_INTERFACE_H
