@@ -2,7 +2,10 @@
 #define PORTCOMMUNICATOR_H
 
 
+#include "serial_types.h"
+
 #include <QObject>
+#include <QString>
 
 
 class PortCommunicator : public QObject {
@@ -15,6 +18,13 @@ signals:
 
 public:
     PortCommunicator();
+
+private:
+    QString      m_serial_port;
+    BaudRate     m_baud_rate;
+    DataBits     m_data_bits;
+    Parity       m_parity;
+    StopBits     m_stop_bits;
 };
 
 #endif // PORTCOMMUNICATOR_H
