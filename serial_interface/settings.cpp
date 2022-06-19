@@ -30,7 +30,16 @@ void Settings::loadSettings() {
 
             while (!stream.atEnd()) {
                 QString line = stream.readLine();
-                DEBUG_MSG_LINE(line.toStdString());
+
+                if (line.contains('=')) {
+                    QStringList parts = line.split('=');
+
+                    if (parts.count() == 2) {
+                        setQStringValue(
+                                    parts.value(0).trimmed(),
+                                    parts.value(1).trimmed());
+                    }
+                }
             }
 
             file.close();
