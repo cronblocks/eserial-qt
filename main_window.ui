@@ -298,7 +298,14 @@
    <addaction name="menuLineEnding"/>
    <addaction name="menuInterlineDelay"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="accessibleDescription">
+    <string/>
+   </property>
+  </widget>
   <action name="actionBaudRate_300">
    <property name="checkable">
     <bool>true</bool>
