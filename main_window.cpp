@@ -34,29 +34,32 @@ MainWindow::~MainWindow() {
 // Setting-up Events
 // ----------------------------
 void MainWindow::setupUiBaudRateReceiver() {
-    connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_600,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_1200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_1800,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_2400,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_4800,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_7200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_9600,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_14400,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_19200,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_28800,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_38400,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_57600,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_115200, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_230400, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_460800, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_921600, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_1M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
-    connect(ui->actionBaudRate_2M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRate);
+    connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_600,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_1200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_1800,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_2400,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_4800,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_7200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_9600,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_14400,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_19200,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_28800,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_38400,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_57600,  &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_115200, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_230400, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_460800, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_921600, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_1M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
+    connect(ui->actionBaudRate_2M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
 }
 
 void MainWindow::setupUiDataBitsReceiver() {
-    //--
+    connect(ui->actionDataBits_5, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
+    connect(ui->actionDataBits_6, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
+    connect(ui->actionDataBits_7, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
+    connect(ui->actionDataBits_8, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
 }
 
 void MainWindow::setupUiParityReceiver() {
@@ -82,7 +85,7 @@ void MainWindow::closeEvent(QCloseEvent *) {
     m_serial->stopInterface();
 }
 
-void MainWindow::actionTriggeredUiBaudRate(bool checked) {
+void MainWindow::actionTriggeredUiBaudRateReceiver(bool checked) {
     QAction *action = (QAction *)sender();
     BaudRate baud_rate = static_cast<BaudRate>(action->text().remove(',').remove(' ').toInt());
 
@@ -94,7 +97,14 @@ void MainWindow::actionTriggeredUiBaudRate(bool checked) {
 }
 
 void MainWindow::actionTriggeredUiDataBitsReceiver(bool checked) {
-    //--
+    QAction *action = (QAction *)sender();
+    DataBits data_bits = static_cast<DataBits>(action->text().remove(',').remove(' ').toInt());
+
+    if (checked) {
+        m_serial->setDataBits(data_bits);
+    }
+
+    setUiDataBits(m_serial->getDataBits());
 }
 
 void MainWindow::actionTriggeredUiParityReceiver(bool checked) {

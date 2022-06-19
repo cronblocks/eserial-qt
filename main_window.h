@@ -31,7 +31,7 @@ private:
     void setupUiLineEndingReceiver();
     void setupUiInterlinedelayReceiver();
 
-    void actionTriggeredUiBaudRate(bool checked);
+    void actionTriggeredUiBaudRateReceiver(bool checked);
     void actionTriggeredUiDataBitsReceiver(bool checked);
     void actionTriggeredUiParityReceiver(bool checked);
     void actionTriggeredUiStopBitsReceiver(bool checked);
