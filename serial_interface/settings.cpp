@@ -15,10 +15,10 @@ Settings::Settings(QString filename) {
 }
 
 void Settings::loadSettings() {
-    std::unique_ptr<QFile> file = std::make_unique<QFile>(m_filename);
-
     DEBUG_MSG("Loading settings file: ");
     DEBUG_MSG(m_filename.toStdString());
+
+    std::unique_ptr<QFile> file = std::make_unique<QFile>(m_filename);
 
     if (file->exists()) {
 
@@ -34,6 +34,8 @@ void Settings::loadSettings() {
 void Settings::saveSettings() {
     DEBUG_MSG("Saving settings file: ");
     DEBUG_MSG_LINE(m_filename.toStdString());
+
+    std::unique_ptr<QFile> file = std::make_unique<QFile>(m_filename);
 }
 
 //------------------
