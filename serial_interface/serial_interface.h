@@ -8,8 +8,6 @@
 
 #include <QObject>
 
-#include <memory>
-
 
 #define SETTINGS_FILENAME "Settings.ini"
 
@@ -30,9 +28,9 @@ public:
     void stopInterface();
 
 private:
-    std::unique_ptr<Settings>         _settings;
-    std::unique_ptr<PortDiscoverer>   _discoverer;
-    std::unique_ptr<PortCommunicator> _communicator;
+    Settings         *_settings;
+    PortDiscoverer   *_discoverer;
+    PortCommunicator *_communicator;
 };
 
 #endif // SERIAL_INTERFACE_H

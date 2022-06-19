@@ -1,9 +1,12 @@
 #include "serial_interface.h"
 
 SerialInterface::SerialInterface() {
-    _settings   = std::make_unique<Settings>(SETTINGS_FILENAME);
-    _discoverer = std::make_unique<PortDiscoverer>();
+    _settings   = new Settings(SETTINGS_FILENAME);
+    _discoverer = new PortDiscoverer();
     _communicator = nullptr;
+
+    connect(_discoverer, &PortDiscoverer::serialPortAdded,
+            this, &SerialInterface::serialPortAdded);
 }
 
 // -----------------
