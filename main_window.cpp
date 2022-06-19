@@ -83,7 +83,14 @@ void MainWindow::closeEvent(QCloseEvent *) {
 }
 
 void MainWindow::actionTriggeredUiBaudRate(bool checked) {
-    //--
+    QAction *action = (QAction *)sender();
+    BaudRate baud_rate = static_cast<BaudRate>(action->text().remove(',').remove(' ').toInt());
+
+    if (checked) {
+        m_serial->setBaudRate(baud_rate);
+    }
+
+    setUiBaudRate(m_serial->getBaudRate());
 }
 
 void MainWindow::actionTriggeredUiDataBitsReceiver(bool checked) {
