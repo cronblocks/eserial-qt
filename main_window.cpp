@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
 
-    m_serial = std::make_unique<SerialInterface>();
+    m_serial = new SerialInterface();
 
     setUiBaudRate       ( m_serial->getBaudRate()       );
     setUiDataBits       ( m_serial->getDataBits()       );
@@ -108,7 +108,10 @@ void MainWindow::connectUiActionReceivers() {
 }
 
 void MainWindow::connectSerialPortSignals() {
-    //
+    connect(m_serial, &SerialInterface::serialPortAdded,   this, &MainWindow::onSerialPortAdded);
+    connect(m_serial, &SerialInterface::serialPortRemoved, this, &MainWindow::onSerialPortRemoved);
+    connect(m_serial, &SerialInterface::dataReceived,      this, &MainWindow::onSerialPortDataReceived);
+    connect(m_serial, &SerialInterface::errorOccurred,     this, &MainWindow::onSerialPortErrorOccurred);
 }
 
 // -------------------------------

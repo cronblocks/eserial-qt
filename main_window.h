@@ -21,8 +21,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
-    std::unique_ptr<SerialInterface> m_serial;
+    SerialInterface *m_serial;
 
     void connectUiButtonClickReceivers();
     void connectUiActionReceivers();
