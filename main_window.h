@@ -22,7 +22,13 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    std::unique_ptr<SerialInterface> serialInterface;
+    std::unique_ptr<SerialInterface> m_serial;
+
+    void setUiBaudRate(BaudRate);
+    void setUiDataBits(DataBits);
+    void setUiParity(Parity);
+    void setUiStopBits(StopBits);
+    void setUiLineEnding(LineEnding);
 
     // QWidget interface
 protected:
