@@ -33,30 +33,60 @@ void PortDiscoverer::stopDiscoveringPorts() {
 // -----------------
 // Port Discovery
 // ---------------
+static QString getPortNameWithDescription(const QSerialPortInfo& port_info) {
+    QString port_desc = port_info.description().trimmed();
+
+    if (port_desc == "") { port_desc = "_"; }
+
+    return port_info.portName().trimmed() + " (" + port_desc + ")";
+}
+
 void PortDiscoverer::findPorts() {
 
     // Checking for new ones
     for (QSerialPortInfo& info : QSerialPortInfo::availablePorts()) {
 
-        QString port_desc = info.description().trimmed();
-        if (port_desc == "") { port_desc = "_"; }
+        QString info_full_name = getPortNameWithDescription(info);
 
-        QString port_full_name = info.portName().trimmed() + " (" + port_desc + ")";
+        bool exists = false;
 
-        bool already_exists = false;
-
-        for (QString& available_name : m_available_ports) {
-            if (port_full_name == available_name) {
-                already_exists = true;
+        for (QString& available_full_name : m_available_ports) {
+            if (info_full_name == available_full_name) {
+                exists = true;
                 break;
             }
         }
 
-        if (!already_exists) {
-            m_available_ports.push_back(port_full_name);
-            emit serialPortAdded(port_full_name);
+        if (!exists) {
+            m_available_ports.push_back(info_full_name);
+            emit serialPortAdded(info_full_name);
         }
     }
 
     // Checking for removed ones
+    std::list<QString> ports_to_be_removed;
+
+    for (QString& available_full_name : m_available_ports) {
+
+        bool exists = false;
+
+        for (QSerialPortInfo& info : QSerialPortInfo::availablePorts()) {
+
+            QString info_full_name = getPortNameWithDescription(info);;
+
+            if (info_full_name == available_full_name) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (!exists) {
+            ports_to_be_removed.push_back(available_full_name);
+            emit serialPortRemoved(available_full_name);
+        }
+    }
+
+    for (QString& removal_full_name : ports_to_be_removed) {
+        m_available_ports.remove(removal_full_name);
+    }
 }
