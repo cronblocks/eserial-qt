@@ -4,11 +4,13 @@ SerialInterface::SerialInterface() {
     _settings = std::make_unique<Settings>(SETTINGS_FILENAME);
 }
 
-
-void SerialInterface::StartInterface() {
+// -----------------
+// Interface controls
+// --------------
+void SerialInterface::startInterface() {
     //--
 }
 
-void SerialInterface::StopInterface() {
+void SerialInterface::stopInterface() {
     _settings->SaveSettings();
 }

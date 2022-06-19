@@ -26,8 +26,8 @@ signals:
 
 public:
     SerialInterface();
-    void StartInterface();
-    void StopInterface();
+    void startInterface();
+    void stopInterface();
 
 private:
     std::unique_ptr<Settings> _settings;
