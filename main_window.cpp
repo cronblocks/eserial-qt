@@ -274,8 +274,8 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
     }
 }
 
-void MainWindow::onSerialPortDataReceived(const QString&) {
-    //--
+void MainWindow::onSerialPortDataReceived(const QString& text) {
+    ui->receivedTextEdit->append(text);
 }
 
 void MainWindow::onSerialPortErrorOccurred(const QString&) {
