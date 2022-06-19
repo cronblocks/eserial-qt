@@ -78,5 +78,8 @@ void MainWindow::setUiStopBits(StopBits stop_bits) {
 }
 
 void MainWindow::setUiLineEnding(LineEnding line_ending) {
-    //--
+    ui->actionLineEnding_None->setChecked(line_ending == LineEnding::None);
+    ui->actionLineEnding_CR->setChecked(line_ending == LineEnding::CR);
+    ui->actionLineEnding_LF->setChecked(line_ending == LineEnding::LF);
+    ui->actionLineEnding_CRLF->setChecked(line_ending == LineEnding::CRLF);
 }
