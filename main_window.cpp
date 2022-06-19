@@ -69,7 +69,9 @@ void MainWindow::setupUiParityReceiver() {
 }
 
 void MainWindow::setupUiStopBitsReceiver() {
-    //--
+    connect(ui->actionStopBits_1,   &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
+    connect(ui->actionStopBits_1_5, &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
+    connect(ui->actionStopBits_2,   &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
 }
 
 void MainWindow::setupUiLineEndingReceiver() {
@@ -127,7 +129,20 @@ void MainWindow::actionTriggeredUiParityReceiver(bool checked) {
 }
 
 void MainWindow::actionTriggeredUiStopBitsReceiver(bool checked) {
-    //--
+    QAction *action = (QAction *)sender();
+    float stop_bits = action->text().trimmed().remove(' ').toFloat();
+
+    if (checked) {
+        if (stop_bits == 1) {
+            m_serial->setStopBits(StopBits::One);
+        } else if (stop_bits == 1.5) {
+            m_serial->setStopBits(StopBits::OnePtFive);
+        } else if (stop_bits == 2) {
+            m_serial->setStopBits(StopBits::Two);
+        }
+    }
+
+    setUiStopBits(m_serial->getStopBits());
 }
 
 void MainWindow::actionTriggeredUiLineEndingReceiver(bool checked) {
