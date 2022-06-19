@@ -76,7 +76,11 @@ void SerialInterface::startSerialPort() {
     if (m_serial_port.isNull() || m_serial_port.isEmpty()) {
         emit errorOccurred("Undefined Serial Port");
     } else {
-        //
+        if (m_comm_ptr == nullptr) {
+            m_comm_ptr = new PortCommunicator();
+        } else {
+            emit errorOccurred("Serial Port already opened");
+        }
     }
 }
 
