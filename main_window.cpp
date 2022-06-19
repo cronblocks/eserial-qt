@@ -75,7 +75,10 @@ void MainWindow::setupUiStopBitsReceiver() {
 }
 
 void MainWindow::setupUiLineEndingReceiver() {
-    //--
+    connect(ui->actionLineEnding_None, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
+    connect(ui->actionLineEnding_CR,   &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
+    connect(ui->actionLineEnding_LF,   &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
+    connect(ui->actionLineEnding_CRLF, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
 }
 
 void MainWindow::setupUiInterlinedelayReceiver() {
@@ -146,7 +149,22 @@ void MainWindow::actionTriggeredUiStopBitsReceiver(bool checked) {
 }
 
 void MainWindow::actionTriggeredUiLineEndingReceiver(bool checked) {
-    //--
+    QAction *action = (QAction *)sender();
+    QString line_ending = action->text().remove(QRegularExpression(" .*$")).trimmed().toLower();
+
+    if (checked) {
+        if (line_ending == "none") {
+            m_serial->setLineEnding(LineEnding::None);
+        } else if (line_ending == "cr") {
+            m_serial->setLineEnding(LineEnding::CR);
+        } else if (line_ending == "lf") {
+            m_serial->setLineEnding(LineEnding::LF);
+        } else if (line_ending == "crlf") {
+            m_serial->setLineEnding(LineEnding::CRLF);
+        }
+    }
+
+    setUiLineEnding(m_serial->getLineEnding());
 }
 
 void MainWindow::actionTriggeredUiInterlinedelayReceiver(bool checked) {
