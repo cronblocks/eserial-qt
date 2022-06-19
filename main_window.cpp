@@ -242,8 +242,13 @@ void MainWindow::onSerialPortAdded(const QString& port_name) {
     ui->serialPortComboBox->addItem(port_name);
 }
 
-void MainWindow::onSerialPortRemoved(const QString&) {
-    //--
+void MainWindow::onSerialPortRemoved(const QString& port_name) {
+    for (int index = 0; index < ui->serialPortComboBox->count(); index++) {
+        if (ui->serialPortComboBox->itemText(index) == port_name) {
+            ui->serialPortComboBox->removeItem(index);
+            break;
+        }
+    }
 }
 
 void MainWindow::onSerialPortDataReceived(const QString&) {
