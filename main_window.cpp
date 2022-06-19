@@ -9,11 +9,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_serial = std::make_unique<SerialInterface>();
 
-    setUiBaudRate   ( m_serial->getBaudRate()   );
-    setUiDataBits   ( m_serial->getDataBits()   );
-    setUiParity     ( m_serial->getParity()     );
-    setUiStopBits   ( m_serial->getStopBits()   );
-    setUiLineEnding ( m_serial->getLineEnding() );
+    setUiBaudRate       ( m_serial->getBaudRate()       );
+    setUiDataBits       ( m_serial->getDataBits()       );
+    setUiParity         ( m_serial->getParity()         );
+    setUiStopBits       ( m_serial->getStopBits()       );
+    setUiLineEnding     ( m_serial->getLineEnding()     );
+    setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
     m_serial->startInterface();
 }
@@ -82,4 +83,8 @@ void MainWindow::setUiLineEnding(LineEnding line_ending) {
     ui->actionLineEnding_CR->setChecked(line_ending == LineEnding::CR);
     ui->actionLineEnding_LF->setChecked(line_ending == LineEnding::LF);
     ui->actionLineEnding_CRLF->setChecked(line_ending == LineEnding::CRLF);
+}
+
+void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
+    //
 }

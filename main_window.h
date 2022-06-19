@@ -29,6 +29,7 @@ private:
     void setUiParity(Parity);
     void setUiStopBits(StopBits);
     void setUiLineEnding(LineEnding);
+    void setUiInterlinedelay(unsigned int);
 
     // QWidget interface
 protected:
