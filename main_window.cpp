@@ -178,7 +178,20 @@ void MainWindow::actionTriggeredUiLineEndingReceiver(bool checked) {
 }
 
 void MainWindow::actionTriggeredUiInterlineDelayReceiver(bool checked) {
-    //--
+    QAction *action = (QAction *)sender();
+    QString delay_str = action->text().trimmed().remove(QRegularExpression(" .*$")).trimmed().toLower();
+
+    if (checked) {
+        if (delay_str == "custom") {
+            //-- TODO:
+            //      Addition of getting custom value to be done at a later stage
+        } else {
+            unsigned int delay_val = delay_str.toUInt();
+            m_serial->setInterlineDelay(delay_val);
+        }
+    }
+
+    setUiInterlinedelay(m_serial->getInterlineDelay());
 }
 
 // -------------------------------
