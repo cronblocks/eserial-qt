@@ -10,10 +10,10 @@ Settings::Settings(QString filename) {
 
     _settings.clear();
 
-    LoadSettings();
+    loadSettings();
 }
 
-void Settings::LoadSettings() {
+void Settings::loadSettings() {
     DEBUG_MSG("Loading settings file: ");
     DEBUG_MSG(_filename.toStdString());
 
@@ -28,7 +28,7 @@ void Settings::LoadSettings() {
     }
 }
 
-void Settings::SaveSettings() {
+void Settings::saveSettings() {
     DEBUG_MSG("Saving settings file: ");
     DEBUG_MSG_LINE(_filename.toStdString());
 }

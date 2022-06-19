@@ -24,5 +24,5 @@ void SerialInterface::startInterface() {
 
 void SerialInterface::stopInterface() {
     m_discvr_ptr->stopDiscoveringPorts();
-    m_settings_ptr->SaveSettings();
+    m_settings_ptr->saveSettings();
 }

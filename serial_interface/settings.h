@@ -13,10 +13,10 @@ public:
     Settings(QString filename);
 
 private:
-    void LoadSettings();
+    void loadSettings();
 
 public:
-    void SaveSettings();
+    void saveSettings();
 
     void SetUIntValue(QString key, unsigned int value);
     void SetIntValue(QString key, int value);
