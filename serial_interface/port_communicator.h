@@ -2,7 +2,16 @@
 #define PORTCOMMUNICATOR_H
 
 
-class PortCommunicator {
+#include <QObject>
+
+
+class PortCommunicator : public QObject {
+
+    Q_OBJECT
+
+signals:
+    void dataReceived(QString&);
+    void errorOccurred(QString&);
 
 public:
     PortCommunicator();
