@@ -17,7 +17,7 @@ signals:
     void errorOccurred(const QString&);
 
 public:
-    PortCommunicator();
+    PortCommunicator(const QString&, BaudRate, DataBits, Parity, StopBits);
 
 private:
     QString      m_serial_port;
