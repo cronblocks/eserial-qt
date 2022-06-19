@@ -16,12 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     setUiLineEnding     ( m_serial->getLineEnding()     );
     setUiInterlinedelay ( m_serial->getInterlineDelay() );
 
-    setupUiBaudRateReceiver();
-    setupUiDataBitsReceiver();
-    setupUiParityReceiver();
-    setupUiStopBitsReceiver();
-    setupUiLineEndingReceiver();
-    setupUiInterlineDelayReceiver();
+    setupUiActionReceivers();
 
     m_serial->startInterface();
 }
@@ -33,7 +28,10 @@ MainWindow::~MainWindow() {
 // -------------------------------
 // Setting-up Events
 // ----------------------------
-void MainWindow::setupUiBaudRateReceiver() {
+void MainWindow::setupUiActionReceivers() {
+    // -----------------------
+    // Baud Rates
+    // ---------------------
     connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
     connect(ui->actionBaudRate_600,    &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
     connect(ui->actionBaudRate_1200,   &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
@@ -53,35 +51,40 @@ void MainWindow::setupUiBaudRateReceiver() {
     connect(ui->actionBaudRate_921600, &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
     connect(ui->actionBaudRate_1M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
     connect(ui->actionBaudRate_2M,     &QAction::triggered, this, &MainWindow::actionTriggeredUiBaudRateReceiver);
-}
 
-void MainWindow::setupUiDataBitsReceiver() {
+    // -----------------------
+    // Data Bits
+    // ---------------------
     connect(ui->actionDataBits_5, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
     connect(ui->actionDataBits_6, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
     connect(ui->actionDataBits_7, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
     connect(ui->actionDataBits_8, &QAction::triggered, this, &MainWindow::actionTriggeredUiDataBitsReceiver);
-}
 
-void MainWindow::setupUiParityReceiver() {
+    // -----------------------
+    // Parity
+    // ---------------------
     connect(ui->actionParity_None, &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
     connect(ui->actionParity_Even, &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
     connect(ui->actionParity_Odd,  &QAction::triggered, this, &MainWindow::actionTriggeredUiParityReceiver);
-}
 
-void MainWindow::setupUiStopBitsReceiver() {
+    // -----------------------
+    // Stop Bits
+    // ---------------------
     connect(ui->actionStopBits_1,   &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
     connect(ui->actionStopBits_1_5, &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
     connect(ui->actionStopBits_2,   &QAction::triggered, this, &MainWindow::actionTriggeredUiStopBitsReceiver);
-}
 
-void MainWindow::setupUiLineEndingReceiver() {
+    // -----------------------
+    // Line Ending
+    // ---------------------
     connect(ui->actionLineEnding_None, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
     connect(ui->actionLineEnding_CR,   &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
     connect(ui->actionLineEnding_LF,   &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
     connect(ui->actionLineEnding_CRLF, &QAction::triggered, this, &MainWindow::actionTriggeredUiLineEndingReceiver);
-}
 
-void MainWindow::setupUiInterlineDelayReceiver() {
+    // -----------------------
+    // Inter-line Delays
+    // ---------------------
     connect(ui->actionInterlineDelay_1ms,    &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
     connect(ui->actionInterlineDelay_5ms,    &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
     connect(ui->actionInterlineDelay_10ms,   &QAction::triggered, this, &MainWindow::actionTriggeredUiInterlineDelayReceiver);
