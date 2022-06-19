@@ -17,17 +17,17 @@ private:
 public:
     void saveSettings();
 
-    void setUIntValue(QString key, unsigned int value);
-    void setIntValue(QString key, int value);
-    void setFloatValue(QString key, float value);
-    void setDoubleValue(QString key, double value);
-    void setQStringValue(QString key, QString value);
+    void setUIntValue(const QString& key, unsigned int value);
+    void setIntValue(const QString& key, int value);
+    void setFloatValue(const QString& key, float value);
+    void setDoubleValue(const QString& key, double value);
+    void setQStringValue(const QString& key, QString&& value);
 
-    unsigned int getUIntValue(QString key, unsigned int default_value = 0);
-    int getIntValue(QString key, int default_value = 0);
-    float getFloatValue(QString key, float default_value = 0);
-    double getDoubleValue(QString key, double default_value = 0);
-    QString getQStringValue(QString key, const QString& default_value = "");
+    unsigned int getUIntValue(const QString& key, unsigned int default_value = 0);
+    int getIntValue(const QString& key, int default_value = 0);
+    float getFloatValue(const QString& key, float default_value = 0);
+    double getDoubleValue(const QString& key, double default_value = 0);
+    QString getQStringValue(const QString& key, const QString& default_value = "");
 
 private:
     QString m_filename;
