@@ -131,7 +131,13 @@ void MainWindow::closeEvent(QCloseEvent *) {
 // Handling Events - Button Clicks
 // ----------------------------
 void MainWindow::onUiSerialPortStartButtonClicked() {
-    //--
+    if (ui->serialPortStartButton->text() == "Start") {
+        ui->serialPortStartButton->setText("Stop");
+        m_serial->startSerialPort();
+    } else {
+        ui->serialPortStartButton->setText("Start");
+        m_serial->stopSerialPort();
+    }
 }
 
 void MainWindow::onUiTransmitTextSendButtonClicked() {
