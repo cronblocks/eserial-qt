@@ -1,5 +1,7 @@
 #include "serial_interface.h"
 
+#include "macros.h"
+
 SerialInterface::SerialInterface() {
     m_settings_ptr = new Settings(SETTINGS_FILENAME);
     m_discvr_ptr   = new PortDiscoverer();
