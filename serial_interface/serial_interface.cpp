@@ -84,6 +84,8 @@ void SerialInterface::startSerialPort() {
 
             connect(m_comm_ptr, &PortCommunicator::errorOccurred,
                     this,       &SerialInterface::errorOccurred);
+
+            m_comm_ptr->startReception();
         } else {
             emit errorOccurred("Serial Port already opened");
         }
@@ -94,6 +96,7 @@ void SerialInterface::stopSerialPort() {
     if (m_comm_ptr == nullptr) {
         emit errorOccurred("Serial Port not opened");
     } else {
+        m_comm_ptr->stopReception();
         delete(m_comm_ptr);
         m_comm_ptr = nullptr;
     }
