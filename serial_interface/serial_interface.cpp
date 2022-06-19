@@ -72,6 +72,14 @@ void SerialInterface::stopInterface() {
     m_settings_ptr->saveSettings();
 }
 
+void SerialInterface::startSerialPort() {
+    //
+}
+
+void SerialInterface::stopSerialPort() {
+    //
+}
+
 // ----------------------
 // Setters
 // -------------------

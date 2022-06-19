@@ -29,6 +29,8 @@ public:
 
     void startInterface();
     void stopInterface();
+    void startSerialPort();
+    void stopSerialPort();
 
     void setSerialPort(const QString&);
     void setBaudRate(BaudRate);
