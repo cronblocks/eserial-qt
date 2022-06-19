@@ -34,12 +34,14 @@ public:
     void setParity(Parity);
     void setStopBits(StopBits);
     void setLineEnding(LineEnding);
+    void setInterlineDelay(unsigned int);
 
-    BaudRate   getBaudRate();
-    DataBits   getDataBits();
-    Parity     getParity();
-    StopBits   getStopBits();
-    LineEnding getLineEnding();
+    BaudRate     getBaudRate();
+    DataBits     getDataBits();
+    Parity       getParity();
+    StopBits     getStopBits();
+    LineEnding   getLineEnding();
+    unsigned int getInterlineDelay();
 
 private:
     Settings         *m_settings_ptr;

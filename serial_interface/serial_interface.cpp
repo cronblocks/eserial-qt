@@ -64,7 +64,7 @@ void SerialInterface::stopInterface() {
 }
 
 // ----------------------
-// Getters / Setters
+// Setters
 // -------------------
 void SerialInterface::setBaudRate(BaudRate baud_rate) {
     m_baud_rate = baud_rate;
@@ -86,6 +86,13 @@ void SerialInterface::setLineEnding(LineEnding line_ending) {
     m_line_ending = line_ending;
 }
 
+void SerialInterface::setInterlineDelay(unsigned int interline_delay) {
+    m_interline_delay_ms = interline_delay;
+}
+
+// ----------------------
+// Getters
+// -------------------
 BaudRate SerialInterface::getBaudRate() {
     return m_baud_rate;
 }
@@ -104,4 +111,8 @@ StopBits SerialInterface::getStopBits() {
 
 LineEnding SerialInterface::getLineEnding() {
     return m_line_ending;
+}
+
+unsigned int SerialInterface::getInterlineDelay() {
+    return m_interline_delay_ms;
 }
