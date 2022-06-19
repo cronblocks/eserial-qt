@@ -19,9 +19,11 @@ PortCommunicator::PortCommunicator(
 }
 
 void PortCommunicator::startReception() {
-    //
+    emit dataReceived("Test Data 1");
+    emit errorOccurred("Test Error 1");
 }
 
 void PortCommunicator::stopReception() {
-    //
+    emit dataReceived("Test Data 2");
+    emit errorOccurred("Test Error 2");
 }
