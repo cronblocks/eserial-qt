@@ -62,27 +62,27 @@ void Settings::setQStringValue(QString key, QString value) {
 //------------------
 // Getters
 //---------------
-unsigned int Settings::getUIntValue(QString key) {
+unsigned int Settings::getUIntValue(QString key, unsigned int default_value) {
     //--
-    return 0;
+    return default_value;
 }
 
-int Settings::getIntValue(QString key) {
+int Settings::getIntValue(QString key, int default_value) {
     //--
-    return 0;
+    return default_value;
 }
 
-float Settings::getFloatValue(QString key) {
+float Settings::getFloatValue(QString key, float default_value) {
     //--
-    return 0;
+    return default_value;
 }
 
-double Settings::getDoubleValue(QString key) {
+double Settings::getDoubleValue(QString key, double default_value) {
     //--
-    return 0;
+    return default_value;
 }
 
-QString Settings::getQStringValue(QString key) {
+QString Settings::getQStringValue(QString key, const QString& default_value) {
     //--
-    return "";
+    return default_value;
 }
