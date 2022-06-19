@@ -49,6 +49,7 @@ private:
     PortDiscoverer   *m_discvr_ptr;
     PortCommunicator *m_comm_ptr;
 
+    QString      m_serial_port;
     BaudRate     m_baud_rate;
     DataBits     m_data_bits;
     Parity       m_parity;
