@@ -293,8 +293,18 @@ void MainWindow::onSerialPortClosed() {
     setUiForPortClosed();
 }
 
-void MainWindow::onSerialPortFileTransmitPercentageUpdated(float) {
-    //--
+void MainWindow::onSerialPortFileTransmitPercentageUpdated(float percentage) {
+    int max_value = ui->transmitFileProgressBar->maximum();
+    int min_value = ui->transmitFileProgressBar->minimum();
+    int current_value = min_value + (int)((max_value - min_value) * percentage);
+
+    ui->transmitFileProgressBar->setValue(current_value);
+
+    if (current_value < max_value) {
+        ui->transmitFileProgressBar->setEnabled(true);
+    } else {
+        ui->transmitFileProgressBar->setEnabled(false);
+    }
 }
 
 void MainWindow::onSerialPortDataReceived(const QString& text) {
