@@ -414,6 +414,8 @@ void MainWindow::setUiForPortOpened() {
     ui->serialPortStartButton->setText(start_button_stop_text);
 
     ui->transmitTextEdit->setEnabled(true);
+    ui->transmitTextSendButton->setEnabled(true);
+    ui->transmitTextSendFileButton->setEnabled(true);
 }
 
 void MainWindow::setUiForPortClosed() {
@@ -426,5 +428,7 @@ void MainWindow::setUiForPortClosed() {
     ui->serialPortStartButton->setText(start_button_initial_text);
 
     ui->transmitTextEdit->setEnabled(false);
+    ui->transmitTextSendButton->setEnabled(false);
+    ui->transmitTextSendFileButton->setEnabled(false);
 }
 
