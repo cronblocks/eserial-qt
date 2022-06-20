@@ -36,5 +36,7 @@ void PortCommunicator::sendString(const QString& str) {
 }
 
 void PortCommunicator::run() {
-    //-- Thread Func
+    while (m_is_running) {
+        //
+    }
 }
