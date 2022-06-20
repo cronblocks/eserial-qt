@@ -321,6 +321,10 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
 
 void MainWindow::onSerialPortOpened() {
     QDateTime dt = QDateTime::currentDateTime();
+    QString filename =
+            "dump - " +
+            dt.toString("yyyy_MM_dd - hh_mm_ss") +
+            ".dump";
     QDir dir = QDir();
 
     if (!dir.exists(DUMP_FILES_FOLDER)) {
