@@ -10,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
 
-    start_button_initial_text = ui->serialPortStartButton->text();
-    start_button_stop_text = "STOP";
+    m_start_button_initial_text = ui->serialPortStartButton->text();
+    m_start_button_stop_text = "STOP";
 
     m_serial = new SerialInterface();
 
@@ -145,7 +145,7 @@ void MainWindow::closeEvent(QCloseEvent *) {
 // Handling Events - Button Clicks
 // ----------------------------
 void MainWindow::onUiSerialPortStartButtonClicked() {
-    if (ui->serialPortStartButton->text() == start_button_initial_text) {
+    if (ui->serialPortStartButton->text() == m_start_button_initial_text) {
         m_serial->startSerialPort();
     } else {
         m_serial->stopSerialPort();
@@ -454,7 +454,7 @@ void MainWindow::setUiForPortOpened() {
     ui->menuStopBits->setEnabled(false);
 
     ui->serialPortComboBox->setEnabled(false);
-    ui->serialPortStartButton->setText(start_button_stop_text);
+    ui->serialPortStartButton->setText(m_start_button_stop_text);
 
     ui->transmitTextEdit->setEnabled(true);
     ui->transmitTextSendButton->setEnabled(true);
@@ -470,7 +470,7 @@ void MainWindow::setUiForPortClosed() {
     ui->menuStopBits->setEnabled(true);
 
     ui->serialPortComboBox->setEnabled(true);
-    ui->serialPortStartButton->setText(start_button_initial_text);
+    ui->serialPortStartButton->setText(m_start_button_initial_text);
 
     ui->transmitTextEdit->setEnabled(false);
     ui->transmitTextSendButton->setEnabled(false);

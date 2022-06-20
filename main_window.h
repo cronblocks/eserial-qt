@@ -2,6 +2,7 @@
 #define MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 
 #include "serial_interface/serial_interface.h"
 
@@ -21,8 +22,10 @@ public:
 private:
     Ui::MainWindow *ui;
     SerialInterface *m_serial;
-    QString start_button_initial_text;
-    QString start_button_stop_text;
+    QString m_start_button_initial_text;
+    QString m_start_button_stop_text;
+
+    QFile *file;
 
     void connectUiEventReceivers();
     void connectSerialPortSignals();
