@@ -32,7 +32,9 @@ void PortCommunicator::stopPortCommunication() {
 }
 
 void PortCommunicator::sendString(const QString& str) {
-    //--
+    m_serial_data_out_mutex.lock();
+    m_serial_data_out += str;
+    m_serial_data_out_mutex.unlock();
 }
 
 void PortCommunicator::run() {
