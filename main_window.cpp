@@ -380,6 +380,7 @@ void MainWindow::onSerialPortDataReceived(const QString& text) {
 
     if (m_dump_stream != nullptr) {
         *m_dump_stream << text;
+        m_dump_stream->flush();
     }
 }
 
