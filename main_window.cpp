@@ -416,6 +416,8 @@ void MainWindow::setUiForPortOpened() {
     ui->transmitTextEdit->setEnabled(true);
     ui->transmitTextSendButton->setEnabled(true);
     ui->transmitTextSendFileButton->setEnabled(true);
+
+    ui->receivedTextEdit->setEnabled(true);
 }
 
 void MainWindow::setUiForPortClosed() {
@@ -430,5 +432,7 @@ void MainWindow::setUiForPortClosed() {
     ui->transmitTextEdit->setEnabled(false);
     ui->transmitTextSendButton->setEnabled(false);
     ui->transmitTextSendFileButton->setEnabled(false);
+
+    ui->receivedTextEdit->setEnabled(false);
 }
 
