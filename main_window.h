@@ -45,6 +45,7 @@ private:
     void onSerialPortRemoved(const QString&);
     void onSerialPortOpened();
     void onSerialPortClosed();
+    void onSerialPortFileTransmitPercentageUpdated(float);
     void onSerialPortDataReceived(const QString&);
     void onSerialPortErrorOccurred(const QString&);
 

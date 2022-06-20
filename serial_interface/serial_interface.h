@@ -23,7 +23,7 @@ signals:
     void serialPortRemoved(const QString&);
     void portOpened();
     void portClosed();
-    void fileTransmitPercentageUpdated(float);
+    void fileTxnPercentageUpdated(float);
     void dataReceived(const QString&);
     void errorOccurred(const QString&);
 

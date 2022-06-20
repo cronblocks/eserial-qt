@@ -117,12 +117,13 @@ void MainWindow::connectUiEventReceivers() {
 }
 
 void MainWindow::connectSerialPortSignals() {
-    connect(m_serial, &SerialInterface::serialPortAdded,   this, &MainWindow::onSerialPortAdded);
-    connect(m_serial, &SerialInterface::serialPortRemoved, this, &MainWindow::onSerialPortRemoved);
-    connect(m_serial, &SerialInterface::portOpened,        this, &MainWindow::onSerialPortOpened);
-    connect(m_serial, &SerialInterface::portClosed,        this, &MainWindow::onSerialPortClosed);
-    connect(m_serial, &SerialInterface::dataReceived,      this, &MainWindow::onSerialPortDataReceived);
-    connect(m_serial, &SerialInterface::errorOccurred,     this, &MainWindow::onSerialPortErrorOccurred);
+    connect(m_serial, &SerialInterface::serialPortAdded,          this, &MainWindow::onSerialPortAdded);
+    connect(m_serial, &SerialInterface::serialPortRemoved,        this, &MainWindow::onSerialPortRemoved);
+    connect(m_serial, &SerialInterface::portOpened,               this, &MainWindow::onSerialPortOpened);
+    connect(m_serial, &SerialInterface::portClosed,               this, &MainWindow::onSerialPortClosed);
+    connect(m_serial, &SerialInterface::fileTxnPercentageUpdated, this, &MainWindow::onSerialPortFileTransmitPercentageUpdated);
+    connect(m_serial, &SerialInterface::dataReceived,             this, &MainWindow::onSerialPortDataReceived);
+    connect(m_serial, &SerialInterface::errorOccurred,            this, &MainWindow::onSerialPortErrorOccurred);
 }
 
 // -------------------------------
@@ -290,6 +291,10 @@ void MainWindow::onSerialPortOpened() {
 
 void MainWindow::onSerialPortClosed() {
     setUiForPortClosed();
+}
+
+void MainWindow::onSerialPortFileTransmitPercentageUpdated(float) {
+    //--
 }
 
 void MainWindow::onSerialPortDataReceived(const QString& text) {
