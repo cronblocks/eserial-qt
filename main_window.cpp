@@ -2,9 +2,10 @@
 #include "ui_main_window.h"
 
 #include <QScrollBar>
+#include <QDir>
 
 
-#define DUMP_FILES_FOLDER      "./dump-files"
+#define DUMP_FILES_FOLDER      "dump-files"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -318,6 +319,12 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
 }
 
 void MainWindow::onSerialPortOpened() {
+    QDir dir = QDir();
+
+    if (!dir.exists(DUMP_FILES_FOLDER)) {
+        dir.mkdir(DUMP_FILES_FOLDER);
+    }
+
     setUiForPortOpened();
 }
 
