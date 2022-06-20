@@ -412,6 +412,8 @@ void MainWindow::setUiForPortOpened() {
 
     ui->serialPortComboBox->setEnabled(false);
     ui->serialPortStartButton->setText(start_button_stop_text);
+
+    ui->transmitTextEdit->setEnabled(true);
 }
 
 void MainWindow::setUiForPortClosed() {
@@ -422,5 +424,7 @@ void MainWindow::setUiForPortClosed() {
 
     ui->serialPortComboBox->setEnabled(true);
     ui->serialPortStartButton->setText(start_button_initial_text);
+
+    ui->transmitTextEdit->setEnabled(false);
 }
 
