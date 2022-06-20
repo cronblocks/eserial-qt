@@ -37,8 +37,7 @@ private:
     Parity       m_parity;
     StopBits     m_stop_bits;
 
-    QMutex m_mutex;
-    bool   m_is_running;
+    volatile bool   m_is_running;
 };
 
 #endif // PORTCOMMUNICATOR_H

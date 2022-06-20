@@ -19,13 +19,16 @@ PortCommunicator::PortCommunicator(
 }
 
 void PortCommunicator::startPortCommunication() {
-    emit dataReceived("Test Data 1");
-    emit errorOccurred("Test Error 1");
+    if (!isRunning()) {
+        m_is_running = true;
+        start();
+    }
 }
 
 void PortCommunicator::stopPortCommunication() {
-    emit dataReceived("Test Data 2");
-    emit errorOccurred("Test Error 2");
+    if (isRunning()) {
+        m_is_running = false;
+    }
 }
 
 void PortCommunicator::sendString(const QString& str) {
