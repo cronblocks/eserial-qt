@@ -37,7 +37,9 @@ private:
     Parity       m_parity;
     StopBits     m_stop_bits;
 
-    volatile bool   m_is_running;
+    QSerialPort  *m_serial;
+
+    volatile bool m_is_running;
 };
 
 #endif // PORTCOMMUNICATOR_H
