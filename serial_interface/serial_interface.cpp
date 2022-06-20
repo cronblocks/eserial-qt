@@ -109,7 +109,27 @@ void SerialInterface::stopSerialPort() {
 }
 
 void SerialInterface::sendTextLineToSerialPort(const QString& text) {
-    //--
+    if (m_comm_ptr != nullptr) {
+
+        m_comm_ptr->sendString(text);
+
+        switch (m_line_ending) {
+            case LineEnding::None:
+                break;
+
+            case LineEnding::CR:
+                m_comm_ptr->sendString("\r");
+                break;
+
+            case LineEnding::LF:
+                m_comm_ptr->sendString("\n");
+                break;
+
+            case LineEnding::CRLF:
+                m_comm_ptr->sendString("\r\n");
+                break;
+        }
+    }
 }
 
 void SerialInterface::sendTextFileToSerialPort(const QString& filename) {
