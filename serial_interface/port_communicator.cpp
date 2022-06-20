@@ -2,6 +2,8 @@
 
 #include "macros.h"
 
+#include <QMutexLocker>
+
 
 #define TIMEOUT_TRANSMIT_DATA_MS   50
 #define TIMEOUT_RECEIVE_DATA_MS    50
@@ -38,9 +40,8 @@ void PortCommunicator::stopPortCommunication() {
 }
 
 void PortCommunicator::sendString(const QString& str) {
-    m_serial_data_out_mutex.lock();
+    const QMutexLocker locker(&m_serial_data_out_mutex);
     m_serial_data_out += str;
-    m_serial_data_out_mutex.unlock();
 }
 
 void PortCommunicator::run() {
@@ -88,6 +89,20 @@ void PortCommunicator::run() {
 }
 
 int PortCommunicator::transmitSerialData() {
+    const QMutexLocker locker(&m_serial_data_out_mutex);
+
+    if (!m_serial_data_out.isNull() &&
+            !m_serial_data_out.isEmpty()) {
+        
+        const QByteArray send_array = m_serial_data_out.toUtf8();
+
+        m_serial->write(send_array);
+
+        if (!m_serial->waitForBytesWritten(TIMEOUT_TRANSMIT_DATA_MS)) {
+            return -1;
+        }
+    }
+
     return 0;
 }
 
