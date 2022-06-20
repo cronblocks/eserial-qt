@@ -34,6 +34,9 @@ public:
     void startSerialPort();
     void stopSerialPort();
 
+    void sendTextLineToSerialPort(const QString&);
+    void sendTextFileToSerialPort(const QString&);
+
     void setSerialPort(const QString&);
     void setBaudRate(BaudRate);
     void setDataBits(DataBits);

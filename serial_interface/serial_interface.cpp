@@ -108,6 +108,14 @@ void SerialInterface::stopSerialPort() {
     }
 }
 
+void SerialInterface::sendTextLineToSerialPort(const QString& text) {
+    //--
+}
+
+void SerialInterface::sendTextFileToSerialPort(const QString& filename) {
+    //--
+}
+
 // ----------------------
 // Setters
 // -------------------
