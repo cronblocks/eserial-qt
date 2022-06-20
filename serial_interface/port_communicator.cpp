@@ -72,8 +72,13 @@ void PortCommunicator::run() {
     }
 
     while (m_is_running) {
-        transmitSerialData();
-        receiveSerialData();
+        if (transmitSerialData() != 0) {
+            break;
+        }
+
+        if (receiveSerialData() != 0) {
+            break;
+        }
     }
 
     m_serial->close();
@@ -83,9 +88,9 @@ void PortCommunicator::run() {
 }
 
 int PortCommunicator::transmitSerialData() {
-    //
+    return 0;
 }
 
 int PortCommunicator::receiveSerialData() {
-    //
+    return 0;
 }
