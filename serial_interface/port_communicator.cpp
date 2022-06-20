@@ -27,3 +27,7 @@ void PortCommunicator::stopPortCommunication() {
     emit dataReceived("Test Data 2");
     emit errorOccurred("Test Error 2");
 }
+
+void PortCommunicator::sendString(const QString& str) {
+    //--
+}

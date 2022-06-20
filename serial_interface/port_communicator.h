@@ -24,6 +24,8 @@ public:
     void startPortCommunication();
     void stopPortCommunication();
 
+    void sendString(const QString&);
+
 private:
     QString      m_serial_port;
     BaudRate     m_baud_rate;
