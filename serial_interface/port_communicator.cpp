@@ -100,6 +100,8 @@ int PortCommunicator::transmitSerialData() {
 
         if (!m_serial->waitForBytesWritten(TIMEOUT_TRANSMIT_DATA_MS)) {
             return -1;
+        } else {
+            m_serial_data_out.clear();
         }
     }
 
