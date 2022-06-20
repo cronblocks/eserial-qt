@@ -27,7 +27,7 @@ MainWindow::~MainWindow() {
 }
 
 // -------------------------------
-// Setting-up Events
+// Setting-up Events' Handlers
 // ----------------------------
 void MainWindow::connectUiEventReceivers() {
 
