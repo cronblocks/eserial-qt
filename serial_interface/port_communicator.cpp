@@ -5,11 +5,11 @@
 #include <QSerialPort>
 
 PortCommunicator::PortCommunicator(
-        const QString& serial_port,
-        BaudRate       baud_rate,
-        DataBits       data_bits,
-        Parity         parity,
-        StopBits       stop_bits) {
+                        const QString& serial_port,
+                        BaudRate       baud_rate,
+                        DataBits       data_bits,
+                        Parity         parity,
+                        StopBits       stop_bits) {
 
     m_serial_port = QString(serial_port);
     m_baud_rate   = baud_rate;
