@@ -15,6 +15,27 @@ PortCommunicator::PortCommunicator(
     m_parity      = parity;
     m_stop_bits   = stop_bits;
 
+    m_serial = nullptr;
+    m_is_running = false;
+}
+
+void PortCommunicator::startPortCommunication() {
+    if (!isRunning()) {
+        start();
+    }
+}
+
+void PortCommunicator::stopPortCommunication() {
+    if (isRunning()) {
+        m_is_running = false;
+    }
+}
+
+void PortCommunicator::sendString(const QString& str) {
+    //--
+}
+
+void PortCommunicator::run() {
     m_serial = new QSerialPort();
 
     m_serial->setPortName(m_serial_name);
@@ -33,35 +54,20 @@ PortCommunicator::PortCommunicator(
         case StopBits::Two:       m_serial->setStopBits(QSerialPort::TwoStop);        break;
     }
 
-    m_is_running = false;
-}
-
-void PortCommunicator::startPortCommunication() {
-    if (!isRunning()) {
-        if (!m_serial->open(QIODevice::ReadWrite)) {
-            emit errorOccurred(tr("Can't open %1 (error code %2)")
-                               .arg(m_serial_name)
-                               .arg(m_serial->error()));
-        } else {
-            emit portOpened();
-            m_is_running = true;
-            start();
-        }
+    if (!m_serial->open(QIODevice::ReadWrite)) {
+        emit errorOccurred(tr("Can't open %1 (error code %2)")
+                           .arg(m_serial_name)
+                           .arg(m_serial->error()));
+    } else {
+        emit portOpened();
+        m_is_running = true;
     }
-}
 
-void PortCommunicator::stopPortCommunication() {
-    if (isRunning()) {
-        m_is_running = false;
-    }
-}
-
-void PortCommunicator::sendString(const QString& str) {
-    //--
-}
-
-void PortCommunicator::run() {
     while (m_is_running) {
         //
     }
+
+    m_serial->close();
+    m_serial = nullptr;
+    emit portClosed();
 }
