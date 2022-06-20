@@ -136,11 +136,9 @@ void MainWindow::closeEvent(QCloseEvent *) {
 // Handling Events - Button Clicks
 // ----------------------------
 void MainWindow::onUiSerialPortStartButtonClicked() {
-    if (ui->serialPortStartButton->text() == "Start") {
-        ui->serialPortStartButton->setText("Stop");
+    if (ui->serialPortStartButton->text() == start_button_initial_text) {
         m_serial->startSerialPort();
     } else {
-        ui->serialPortStartButton->setText("Start");
         m_serial->stopSerialPort();
     }
 }
@@ -408,6 +406,7 @@ void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
 
 void MainWindow::setUiForPortOpened() {
     ui->serialPortComboBox->setEnabled(false);
+    ui->serialPortStartButton->setText(start_button_stop_text);
     ui->menuBaudRate->setEnabled(false);
     ui->menuDataBits->setEnabled(false);
     ui->menuParity->setEnabled(false);
@@ -416,6 +415,7 @@ void MainWindow::setUiForPortOpened() {
 
 void MainWindow::setUiForPortClosed() {
     ui->serialPortComboBox->setEnabled(true);
+    ui->serialPortStartButton->setText(start_button_initial_text);
     ui->menuBaudRate->setEnabled(true);
     ui->menuDataBits->setEnabled(true);
     ui->menuParity->setEnabled(true);
