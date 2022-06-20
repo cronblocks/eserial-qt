@@ -1,6 +1,9 @@
 #include "main_window.h"
 #include "ui_main_window.h"
 
+#include <QScrollBar>
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
@@ -309,6 +312,7 @@ void MainWindow::onSerialPortFileTransmitPercentageUpdated(float percentage) {
 
 void MainWindow::onSerialPortDataReceived(const QString& text) {
     ui->receivedTextEdit->setText(ui->receivedTextEdit->toPlainText() + text);
+    ui->receivedTextEdit->verticalScrollBar()->setValue(ui->receivedTextEdit->verticalScrollBar()->maximum());
 }
 
 void MainWindow::onSerialPortErrorOccurred(const QString& error_message) {
