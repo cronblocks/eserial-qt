@@ -5,6 +5,7 @@
 #include "serial_types.h"
 
 #include <QThread>
+#include <QMutex>
 #include <QString>
 #include <QSerialPort>
 
@@ -33,6 +34,8 @@ private:
     DataBits     m_data_bits;
     Parity       m_parity;
     StopBits     m_stop_bits;
+
+    QMutex m_mutex;
 };
 
 #endif // PORTCOMMUNICATOR_H
