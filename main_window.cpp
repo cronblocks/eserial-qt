@@ -116,6 +116,8 @@ void MainWindow::connectUiEventReceivers() {
 void MainWindow::connectSerialPortSignals() {
     connect(m_serial, &SerialInterface::serialPortAdded,   this, &MainWindow::onSerialPortAdded);
     connect(m_serial, &SerialInterface::serialPortRemoved, this, &MainWindow::onSerialPortRemoved);
+    connect(m_serial, &SerialInterface::portOpened,        this, &MainWindow::onSerialPortOpened);
+    connect(m_serial, &SerialInterface::portClosed,        this, &MainWindow::onSerialPortClosed);
     connect(m_serial, &SerialInterface::dataReceived,      this, &MainWindow::onSerialPortDataReceived);
     connect(m_serial, &SerialInterface::errorOccurred,     this, &MainWindow::onSerialPortErrorOccurred);
 }
@@ -278,6 +280,14 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
             break;
         }
     }
+}
+
+void MainWindow::onSerialPortOpened() {
+    //
+}
+
+void MainWindow::onSerialPortClosed() {
+    //
 }
 
 void MainWindow::onSerialPortDataReceived(const QString& text) {
