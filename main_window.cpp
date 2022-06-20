@@ -319,6 +319,16 @@ void MainWindow::onSerialPortOpened() {
 }
 
 void MainWindow::onSerialPortClosed() {
+    if (m_dump_stream != nullptr) {
+        m_dump_stream->flush();
+        m_dump_stream = nullptr;
+    }
+
+    if (m_dump_file != nullptr) {
+        m_dump_file->close();
+        m_dump_file = nullptr;
+    }
+
     setUiForPortClosed();
 }
 
