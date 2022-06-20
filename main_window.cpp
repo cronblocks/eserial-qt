@@ -339,6 +339,10 @@ void MainWindow::onSerialPortFileTransmitPercentageUpdated(float percentage) {
 void MainWindow::onSerialPortDataReceived(const QString& text) {
     ui->receivedTextEdit->setText(ui->receivedTextEdit->toPlainText() + text);
     ui->receivedTextEdit->verticalScrollBar()->setValue(ui->receivedTextEdit->verticalScrollBar()->maximum());
+
+    if (m_dump_stream != nullptr) {
+        *m_dump_stream << text;
+    }
 }
 
 void MainWindow::onSerialPortErrorOccurred(const QString& error_message) {
