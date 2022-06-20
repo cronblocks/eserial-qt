@@ -109,5 +109,16 @@ int PortCommunicator::transmitSerialData() {
 }
 
 int PortCommunicator::receiveSerialData() {
+    QByteArray receive_array = m_serial->readAll();
+
+    if (m_serial->waitForReadyRead(TIMEOUT_RECEIVE_DATA_MS)) {
+        receive_array += m_serial->readAll();
+    }
+
+    if (!receive_array.isNull() &&
+            !receive_array.isEmpty()) {
+        emit dataReceived(QString(receive_array.data()));
+    }
+
     return 0;
 }
