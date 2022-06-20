@@ -21,6 +21,8 @@ public:
 private:
     Ui::MainWindow *ui;
     SerialInterface *m_serial;
+    QString start_button_initial_text;
+    QString start_button_stop_text;
 
     void connectUiEventReceivers();
     void connectSerialPortSignals();
