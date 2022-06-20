@@ -29,6 +29,8 @@ public:
     void sendString(const QString&);
 
 private:
+    void run() override;
+
     QString      m_serial_port;
     BaudRate     m_baud_rate;
     DataBits     m_data_bits;
@@ -36,6 +38,7 @@ private:
     StopBits     m_stop_bits;
 
     QMutex m_mutex;
+    bool   m_is_running;
 };
 
 #endif // PORTCOMMUNICATOR_H

@@ -14,6 +14,8 @@ PortCommunicator::PortCommunicator(
     m_data_bits   = data_bits;
     m_parity      = parity;
     m_stop_bits   = stop_bits;
+
+    m_is_running = false;
 }
 
 void PortCommunicator::startPortCommunication() {
@@ -28,4 +30,8 @@ void PortCommunicator::stopPortCommunication() {
 
 void PortCommunicator::sendString(const QString& str) {
     //--
+}
+
+void PortCommunicator::run() {
+    //-- Thread Func
 }
