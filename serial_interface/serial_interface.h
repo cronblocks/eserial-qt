@@ -21,6 +21,8 @@ class SerialInterface : public QObject {
 signals:
     void serialPortAdded(const QString&);
     void serialPortRemoved(const QString&);
+    void portOpened();
+    void portClosed();
     void dataReceived(const QString&);
     void errorOccurred(const QString&);
 
