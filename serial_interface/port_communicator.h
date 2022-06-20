@@ -6,6 +6,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QSerialPort>
 
 
 class PortCommunicator : public QObject {
