@@ -321,11 +321,24 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
 
 void MainWindow::onSerialPortOpened() {
     QDateTime dt = QDateTime::currentDateTime();
-    QString filename = "dump - " + dt.toString("yyyy_MM_dd - hh_mm_ss") + ".dump";
+
+    QString filename = DUMP_FILES_FOLDER;
+    filename += "/dump - " + dt.toString("yyyy_MM_dd - hh_mm_ss") + ".dump";
+
     QDir dir = QDir();
 
     if (!dir.exists(DUMP_FILES_FOLDER)) {
         dir.mkdir(DUMP_FILES_FOLDER);
+    }
+
+    m_dump_file = new QFile(filename);
+
+    if (m_dump_file->open(QIODevice::WriteOnly)) {
+        m_dump_stream = new QTextStream(m_dump_file);
+        ui->receiveDumpFilenameLabel->setText("Dump File: " + filename);
+    } else {
+        delete (m_dump_file);
+        m_dump_file = nullptr;
     }
 
     setUiForPortOpened();
@@ -334,11 +347,13 @@ void MainWindow::onSerialPortOpened() {
 void MainWindow::onSerialPortClosed() {
     if (m_dump_stream != nullptr) {
         m_dump_stream->flush();
+        delete (m_dump_stream);
         m_dump_stream = nullptr;
     }
 
     if (m_dump_file != nullptr) {
         m_dump_file->close();
+        delete (m_dump_file);
         m_dump_file = nullptr;
     }
 
