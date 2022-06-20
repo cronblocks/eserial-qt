@@ -37,6 +37,8 @@ private:
     Parity       m_parity;
     StopBits     m_stop_bits;
 
+    QMutex       m_serial_data_mutex;
+    QString      m_serial_out_data;
     QSerialPort  *m_serial;
 
     volatile bool m_is_running;
