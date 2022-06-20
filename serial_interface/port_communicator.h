@@ -30,8 +30,8 @@ public:
 
 private:
     void run() override;
-    bool transmitSerialData();
-    bool receiveSerialData();
+    int transmitSerialData();
+    int receiveSerialData();
 
     QString      m_serial_name;
     BaudRate     m_baud_rate;
