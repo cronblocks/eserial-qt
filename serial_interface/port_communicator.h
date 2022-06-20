@@ -13,6 +13,8 @@ class PortCommunicator : public QObject {
     Q_OBJECT
 
 signals:
+    void portOpened();
+    void portClosed();
     void dataReceived(const QString&);
     void errorOccurred(const QString&);
 
