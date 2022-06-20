@@ -3,6 +3,7 @@
 
 #include <QScrollBar>
 #include <QDir>
+#include <QDateTime>
 
 
 #define DUMP_FILES_FOLDER      "dump-files"
@@ -319,6 +320,7 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
 }
 
 void MainWindow::onSerialPortOpened() {
+    QDateTime dt = QDateTime::currentDateTime();
     QDir dir = QDir();
 
     if (!dir.exists(DUMP_FILES_FOLDER)) {
