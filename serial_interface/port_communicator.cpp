@@ -28,6 +28,7 @@ void PortCommunicator::startPortCommunication() {
 void PortCommunicator::stopPortCommunication() {
     if (isRunning()) {
         m_is_running = false;
+        wait();
     }
 }
 
