@@ -2,8 +2,6 @@
 
 #include "macros.h"
 
-#include <QSerialPort>
-
 PortCommunicator::PortCommunicator(
                         const QString& serial_port,
                         BaudRate       baud_rate,
