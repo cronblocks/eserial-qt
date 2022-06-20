@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFile>
+#include <QTextStream>
 
 #include "serial_interface/serial_interface.h"
 
@@ -25,7 +26,8 @@ private:
     QString m_start_button_initial_text;
     QString m_start_button_stop_text;
 
-    QFile *file;
+    QFile *m_file;
+    QTextStream *m_stream;
 
     void connectUiEventReceivers();
     void connectSerialPortSignals();
