@@ -144,7 +144,8 @@ void MainWindow::onUiSerialPortStartButtonClicked() {
 }
 
 void MainWindow::onUiTransmitTextSendButtonClicked() {
-    //--
+    m_serial->sendTextLineToSerialPort(ui->transmitTextEdit->toPlainText());
+    ui->transmitTextEdit->clear();
 }
 
 void MainWindow::onUiTransmitTextSendFileButtonClicked() {
