@@ -82,10 +82,10 @@ void PortCommunicator::run() {
     emit portClosed();
 }
 
-void PortCommunicator::transmitSerialData() {
+bool PortCommunicator::transmitSerialData() {
     //
 }
 
-void PortCommunicator::receiveSerialData() {
+bool PortCommunicator::receiveSerialData() {
     //
 }
