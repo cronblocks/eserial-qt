@@ -18,12 +18,12 @@ PortCommunicator::PortCommunicator(
     m_stop_bits   = stop_bits;
 }
 
-void PortCommunicator::startReception() {
+void PortCommunicator::startPortCommunication() {
     emit dataReceived("Test Data 1");
     emit errorOccurred("Test Error 1");
 }
 
-void PortCommunicator::stopReception() {
+void PortCommunicator::stopPortCommunication() {
     emit dataReceived("Test Data 2");
     emit errorOccurred("Test Error 2");
 }
