@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
     m_start_button_initial_text = ui->serialPortStartButton->text();
     m_start_button_stop_text = "STOP";
 
+    m_dump_file = nullptr;
+    m_dump_stream = nullptr;
+
     m_serial = new SerialInterface();
 
     setUiBaudRate       ( m_serial->getBaudRate()       );

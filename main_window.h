@@ -26,8 +26,8 @@ private:
     QString m_start_button_initial_text;
     QString m_start_button_stop_text;
 
-    QFile *m_file;
-    QTextStream *m_stream;
+    QFile *m_dump_file;
+    QTextStream *m_dump_stream;
 
     void connectUiEventReceivers();
     void connectSerialPortSignals();
