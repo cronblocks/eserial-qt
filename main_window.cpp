@@ -404,6 +404,7 @@ void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
 }
 
 void MainWindow::setUiForPortOpened() {
+    ui->serialPortComboBox->setEnabled(false);
     ui->menuBaudRate->setEnabled(false);
     ui->menuDataBits->setEnabled(false);
     ui->menuParity->setEnabled(false);
@@ -411,6 +412,7 @@ void MainWindow::setUiForPortOpened() {
 }
 
 void MainWindow::setUiForPortClosed() {
+    ui->serialPortComboBox->setEnabled(true);
     ui->menuBaudRate->setEnabled(true);
     ui->menuDataBits->setEnabled(true);
     ui->menuParity->setEnabled(true);
