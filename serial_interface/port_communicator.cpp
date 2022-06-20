@@ -2,6 +2,11 @@
 
 #include "macros.h"
 
+
+#define TIMEOUT_TRANSMIT_DATA_MS   50
+#define TIMEOUT_RECEIVE_DATA_MS    50
+
+
 PortCommunicator::PortCommunicator(
                         const QString& serial_port,
                         BaudRate       baud_rate,
@@ -67,10 +72,20 @@ void PortCommunicator::run() {
     }
 
     while (m_is_running) {
-        //
+        transmitSerialData();
+        receiveSerialData();
     }
 
     m_serial->close();
     m_serial = nullptr;
+
     emit portClosed();
+}
+
+void PortCommunicator::transmitSerialData() {
+    //
+}
+
+void PortCommunicator::receiveSerialData() {
+    //
 }
