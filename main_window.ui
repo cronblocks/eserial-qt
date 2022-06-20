@@ -161,7 +161,7 @@
     <item>
      <widget class="QTextEdit" name="receivedTextEdit">
       <property name="enabled">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="readOnly">
        <bool>true</bool>
