@@ -31,7 +31,7 @@ public:
 private:
     void run() override;
 
-    QString      m_serial_port;
+    QString      m_serial_name;
     BaudRate     m_baud_rate;
     DataBits     m_data_bits;
     Parity       m_parity;

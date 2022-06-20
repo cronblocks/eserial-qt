@@ -9,7 +9,7 @@ PortCommunicator::PortCommunicator(
                         Parity         parity,
                         StopBits       stop_bits) {
 
-    m_serial_port = QString(serial_port);
+    m_serial_name = QString(serial_port);
     m_baud_rate   = baud_rate;
     m_data_bits   = data_bits;
     m_parity      = parity;
@@ -17,7 +17,7 @@ PortCommunicator::PortCommunicator(
 
     m_serial = new QSerialPort();
 
-    m_serial->setPortName(m_serial_port);
+    m_serial->setPortName(m_serial_name);
     m_serial->setBaudRate(static_cast<int>(m_baud_rate));
     m_serial->setDataBits(static_cast<QSerialPort::DataBits>(m_data_bits));
 
@@ -38,8 +38,15 @@ PortCommunicator::PortCommunicator(
 
 void PortCommunicator::startPortCommunication() {
     if (!isRunning()) {
-        m_is_running = true;
-        start();
+        if (!m_serial->open(QIODevice::ReadWrite)) {
+            emit errorOccurred(tr("Can't open %1 (error code %2)")
+                               .arg(m_serial_name)
+                               .arg(m_serial->error()));
+        } else {
+            emit portOpened();
+            m_is_running = true;
+            start();
+        }
     }
 }
 
