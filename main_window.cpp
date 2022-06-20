@@ -291,8 +291,7 @@ void MainWindow::onSerialPortClosed() {
 }
 
 void MainWindow::onSerialPortDataReceived(const QString& text) {
-    ui->receivedTextEdit->setText(
-                ui->receivedTextEdit->toPlainText() + text);
+    ui->receivedTextEdit->setText(ui->receivedTextEdit->toPlainText() + text);
 }
 
 void MainWindow::onSerialPortErrorOccurred(const QString& error_message) {
