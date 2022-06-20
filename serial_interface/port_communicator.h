@@ -4,12 +4,12 @@
 
 #include "serial_types.h"
 
-#include <QObject>
+#include <QThread>
 #include <QString>
 #include <QSerialPort>
 
 
-class PortCommunicator : public QObject {
+class PortCommunicator : public QThread {
 
     Q_OBJECT
 
