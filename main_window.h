@@ -52,6 +52,8 @@ private:
     void setUiStopBits(StopBits);
     void setUiLineEnding(LineEnding);
     void setUiInterlinedelay(unsigned int);
+    void setUiForPortOpened();
+    void setUiForPortClosed();
 
     // QWidget interface
 protected:

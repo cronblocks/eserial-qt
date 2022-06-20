@@ -283,11 +283,11 @@ void MainWindow::onSerialPortRemoved(const QString& port_name) {
 }
 
 void MainWindow::onSerialPortOpened() {
-    //
+    setUiForPortOpened();
 }
 
 void MainWindow::onSerialPortClosed() {
-    //
+    setUiForPortClosed();
 }
 
 void MainWindow::onSerialPortDataReceived(const QString& text) {
@@ -402,3 +402,12 @@ void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
 
     }
 }
+
+void MainWindow::setUiForPortOpened() {
+    //--
+}
+
+void MainWindow::setUiForPortClosed() {
+    //--
+}
+
