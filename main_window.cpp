@@ -404,10 +404,16 @@ void MainWindow::setUiInterlinedelay(unsigned int delay_ms) {
 }
 
 void MainWindow::setUiForPortOpened() {
-    //--
+    ui->menuBaudRate->setEnabled(false);
+    ui->menuDataBits->setEnabled(false);
+    ui->menuParity->setEnabled(false);
+    ui->menuStopBits->setEnabled(false);
 }
 
 void MainWindow::setUiForPortClosed() {
-    //--
+    ui->menuBaudRate->setEnabled(true);
+    ui->menuDataBits->setEnabled(true);
+    ui->menuParity->setEnabled(true);
+    ui->menuStopBits->setEnabled(true);
 }
 
