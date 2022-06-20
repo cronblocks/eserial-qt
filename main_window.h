@@ -34,6 +34,8 @@ private:
 
     void onUiSerialPortComboBoxSelectionChanged();
 
+    void onUiSendTextEditTextChanged();
+
     void onUiBaudRateActionTriggered(bool checked);
     void onUiDataBitsActionTriggered(bool checked);
     void onUiParityActionTriggered(bool checked);

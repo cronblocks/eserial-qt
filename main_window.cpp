@@ -51,6 +51,11 @@ void MainWindow::connectUiEventReceivers() {
     connect(ui->serialPortComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onUiSerialPortComboBoxSelectionChanged);
 
     // -----------------------
+    // TextEdit
+    // ---------------------
+    connect(ui->transmitTextEdit, &QTextEdit::textChanged, this, &MainWindow::onUiSendTextEditTextChanged);
+
+    // -----------------------
     // Action Triggers - Baud Rates
     // ---------------------
     connect(ui->actionBaudRate_300,    &QAction::triggered, this, &MainWindow::onUiBaudRateActionTriggered);
@@ -174,6 +179,24 @@ void MainWindow::onUiSerialPortComboBoxSelectionChanged() {
         ui->serialPortStartButton->setEnabled(false);
         ui->transmitTextSendButton->setEnabled(false);
         ui->transmitTextSendFileButton->setEnabled(false);
+    }
+}
+
+// -------------------------------
+// Handling Events - Text Edit
+// ----------------------------
+void MainWindow::onUiSendTextEditTextChanged() {
+    QString text = ui->transmitTextEdit->toPlainText();
+
+    if (text.endsWith("\r\n") ||
+        text.endsWith("\r")   ||
+        text.endsWith("\n")) {
+
+        text.remove("\r\n").remove("\r").remove("\n");
+
+        ui->transmitTextEdit->setText(text);
+
+        onUiTransmitTextSendButtonClicked();
     }
 }
 
