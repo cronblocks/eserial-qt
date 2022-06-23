@@ -2,6 +2,9 @@
 
 #include "macros.h"
 
+#include <QFile>
+#include <QTextStream>
+
 
 FileLinesProvider::FileLinesProvider(
         SerialInterface *serial_iface,
