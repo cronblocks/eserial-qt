@@ -175,7 +175,7 @@ void MainWindow::onUiTransmitTextSendFileButtonClicked() {
                 tr("Text Files (*.txt *.serial *.commands *.list *.1553 *.1553commands *.1553-commands)"));
 
     if (!fileName.isNull() && !fileName.isEmpty()) {
-        //
+        m_serial->sendTextFileToSerialPort(fileName);
     }
 }
 
