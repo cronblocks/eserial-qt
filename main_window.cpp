@@ -1,6 +1,7 @@
 #include "main_window.h"
 #include "ui_main_window.h"
 
+#include <QFileDialog>
 #include <QScrollBar>
 #include <QDir>
 #include <QDateTime>
@@ -166,7 +167,16 @@ void MainWindow::onUiTransmitTextSendButtonClicked() {
 }
 
 void MainWindow::onUiTransmitTextSendFileButtonClicked() {
-    //--
+    QString fileName =
+            QFileDialog::getOpenFileName(
+                this,
+                tr("Open text file for transmission"),
+                ".",
+                tr("Text Files (*.txt *.serial *.commands)"));
+
+    if (!fileName.isNull() && !fileName.isEmpty()) {
+        //
+    }
 }
 
 void MainWindow::onUiReceiveTextClearButtonClicked() {
