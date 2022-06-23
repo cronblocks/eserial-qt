@@ -1,6 +1,7 @@
 #include "file_lines_provider.h"
 
 #include "macros.h"
+#include "serial_interface.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -59,11 +60,22 @@ void FileLinesProvider::run() {
 
                 m_is_running = false;
                 delete (file);
+                delete (stream);
                 file = nullptr;
+                stream = nullptr;
                 break;
             }
         } else {
-            //
+            if (!stream->atEnd()) {
+                m_serial_iface_ptr->sendTextLineToSerialPort(stream->readLine());
+            } else {
+                file->close();
+                delete (file);
+                delete (stream);
+                file = nullptr;
+                stream = nullptr;
+                m_is_running = false;
+            }
 
             linesTransferred ++;
             transmissionPercentage = (linesTransferred * 1.0f) / totalFileLines;
