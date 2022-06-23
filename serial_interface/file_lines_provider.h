@@ -2,7 +2,7 @@
 #define FILELINESPROVIDER_H
 
 
-#include "serial_interface.h"
+class SerialInterface;
 
 #include <QThread>
 #include <QString>
