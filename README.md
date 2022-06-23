@@ -3,7 +3,7 @@
 A Qt-Based ***Easy*** and ***Simple*** Serial / COM Port Interface. *eserial-qt* is just an easy and simple interface application for using Serial Port / UART.
 
 
-<div align="center"><img src="./blob/v1.0/.docs/WindowDisplay.png" width="100%" /></div>
+<div align="center"><img src="./.docs/WindowDisplay.png" width="100%" /></div>
 
 
 ## Features
