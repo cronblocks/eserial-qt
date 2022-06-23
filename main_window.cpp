@@ -172,7 +172,7 @@ void MainWindow::onUiTransmitTextSendFileButtonClicked() {
                 this,
                 tr("Open text file for transmission"),
                 ".",
-                tr("Text Files (*.txt *.serial *.commands)"));
+                tr("Text Files (*.txt *.serial *.commands *.list *.1553 *.1553commands *.1553-commands)"));
 
     if (!fileName.isNull() && !fileName.isEmpty()) {
         //
