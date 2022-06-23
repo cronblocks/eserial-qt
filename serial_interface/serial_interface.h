@@ -6,6 +6,7 @@
 #include "settings.h"
 #include "port_discoverer.h"
 #include "port_communicator.h"
+#include "file_lines_provider.h"
 
 #include <QObject>
 #include <QString>
@@ -23,6 +24,8 @@ signals:
     void serialPortRemoved(const QString&);
     void portOpened();
     void portClosed();
+    void fileTxnStarted();
+    void fileTxnCompleted();
     void fileTxnPercentageUpdated(float);
     void dataReceived(const QString&);
     void errorOccurred(const QString&);
