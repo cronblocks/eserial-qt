@@ -1,5 +1,5 @@
-#ifndef PORTCOMMUNICATOR_H
-#define PORTCOMMUNICATOR_H
+#ifndef FILELINESPROVIDER_H
+#define FILELINESPROVIDER_H
 
 
 #include "serial_interface.h"
@@ -34,4 +34,4 @@ private:
     volatile bool m_is_running;
 };
 
-#endif // PORTCOMMUNICATOR_H
+#endif // FILELINESPROVIDER_H
