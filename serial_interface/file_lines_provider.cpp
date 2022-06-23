@@ -75,5 +75,27 @@ void FileLinesProvider::run() {
 }
 
 int FileLinesProvider::countFileLines() {
+    QFile *file = nullptr;
+    QTextStream *stream = nullptr;
+
+    file = new QFile(m_filename);
+
+    if (file->open(QIODevice::ReadOnly)) {
+        stream = new QTextStream(file);
+
+        int totalCount = 0;
+
+        while (!stream->atEnd()) {
+            stream->readLine();
+            totalCount++;
+        }
+
+        file->close();
+        delete (file);
+        delete (stream);
+
+        return totalCount;
+    }
+
     return -1;
 }
