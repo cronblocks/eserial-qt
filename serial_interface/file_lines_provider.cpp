@@ -30,6 +30,9 @@ void FileLinesProvider::stopProvision() {
 
 void FileLinesProvider::run() {
 
+    QFile *file = nullptr;
+    QTextStream *stream = nullptr;
+
     int totalFileLines = countFileLines();
     int linesTransferred = 0;
     float transmissionPercentage = 0.f;
@@ -44,10 +47,28 @@ void FileLinesProvider::run() {
     }
 
     while (m_is_running) {
-        //--
-        linesTransferred ++;
-        transmissionPercentage = (linesTransferred * 1.0f) / totalFileLines;
-        emit provisionPercentageUpdated(transmissionPercentage);
+        if (file == nullptr) {
+            file = new QFile(m_filename);
+
+            if (file->open(QIODevice::ReadOnly)) {
+                stream = new QTextStream(file);
+            } else {
+                emit errorOccurred(tr("Can't transmit %1 (total lines %2)")
+                                   .arg(m_filename)
+                                   .arg(totalFileLines));
+
+                m_is_running = false;
+                delete (file);
+                file = nullptr;
+                break;
+            }
+        } else {
+            //
+
+            linesTransferred ++;
+            transmissionPercentage = (linesTransferred * 1.0f) / totalFileLines;
+            emit provisionPercentageUpdated(transmissionPercentage);
+        }
     }
 
     emit provisionCompleted();
