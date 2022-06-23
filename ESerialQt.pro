@@ -12,6 +12,7 @@ CONFIG += c++17
 DEFINES += _DEBUGGING_MESSAGES=1
 
 SOURCES += \
+    serial_interface/file_lines_provider.cpp \
     serial_interface/port_communicator.cpp \
     serial_interface/port_discoverer.cpp \
     serial_interface/serial_interface.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
     main_window.cpp
 
 HEADERS += \
+    serial_interface/file_lines_provider.h \
     serial_interface/macros.h \
     serial_interface/port_communicator.h \
     serial_interface/port_discoverer.h \
