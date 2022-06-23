@@ -80,6 +80,8 @@ void FileLinesProvider::run() {
             linesTransferred ++;
             transmissionPercentage = (linesTransferred * 1.0f) / totalFileLines;
             emit provisionPercentageUpdated(transmissionPercentage);
+
+            msleep(m_serial_iface_ptr->getInterlineDelay());
         }
     }
 
