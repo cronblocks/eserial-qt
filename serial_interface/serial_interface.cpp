@@ -14,9 +14,10 @@
 
 
 SerialInterface::SerialInterface() {
-    m_settings_ptr = new Settings(SETTINGS_FILENAME);
-    m_discvr_ptr   = new PortDiscoverer();
-    m_comm_ptr     = nullptr;
+    m_settings_ptr      = new Settings(SETTINGS_FILENAME);
+    m_discvr_ptr        = new PortDiscoverer();
+    m_comm_ptr          = nullptr;
+    m_file_provider_ptr = nullptr;
 
     m_baud_rate = static_cast<BaudRate>(
                 m_settings_ptr->getIntValue(
@@ -133,7 +134,32 @@ void SerialInterface::sendTextLineToSerialPort(const QString& text) {
 }
 
 void SerialInterface::sendTextFileToSerialPort(const QString& filename) {
-    //--
+    if (filename.isNull() || filename.isEmpty()) {
+        emit errorOccurred("Filename not provided");
+    } else if (m_comm_ptr == nullptr) {
+        emit errorOccurred("Serial Port not working");
+    } else if (m_file_provider_ptr != nullptr) {
+        emit errorOccurred("File transmission already in progress");
+    } else {
+        m_file_provider_ptr = new FileLinesProvider(this, filename);
+
+        connect(m_file_provider_ptr, &FileLinesProvider::provisionStarted,
+                this,                &SerialInterface::fileTxnStarted);
+
+        connect(m_file_provider_ptr, &FileLinesProvider::provisionCompleted,
+                this,                &SerialInterface::onFileTransmissionCompleted);
+
+        connect(m_file_provider_ptr, &FileLinesProvider::provisionCompleted,
+                this,                &SerialInterface::fileTxnCompleted);
+
+        connect(m_file_provider_ptr, &FileLinesProvider::provisionPercentageUpdated,
+                this,                &SerialInterface::fileTxnPercentageUpdated);
+
+        connect(m_file_provider_ptr, &FileLinesProvider::errorOccurred,
+                this,                &SerialInterface::errorOccurred);
+
+        m_file_provider_ptr->startProvision();
+    }
 }
 
 // ----------------------
@@ -192,4 +218,14 @@ LineEnding SerialInterface::getLineEnding() {
 
 unsigned int SerialInterface::getInterlineDelay() {
     return m_interline_delay_ms;
+}
+
+// ----------------------
+// Internal Events' Handling
+// -------------------
+void SerialInterface::onFileTransmissionCompleted() {
+    if (m_file_provider_ptr != nullptr) {
+        delete (m_file_provider_ptr);
+        m_file_provider_ptr = nullptr;
+    }
 }

@@ -57,9 +57,10 @@ public:
     unsigned int getInterlineDelay();
 
 private:
-    Settings         *m_settings_ptr;
-    PortDiscoverer   *m_discvr_ptr;
-    PortCommunicator *m_comm_ptr;
+    Settings          *m_settings_ptr;
+    PortDiscoverer    *m_discvr_ptr;
+    PortCommunicator  *m_comm_ptr;
+    FileLinesProvider *m_file_provider_ptr;
 
     QString      m_serial_port;
     BaudRate     m_baud_rate;
@@ -68,6 +69,8 @@ private:
     StopBits     m_stop_bits;
     LineEnding   m_line_ending;
     unsigned int m_interline_delay_ms;
+
+    void onFileTransmissionCompleted();
 };
 
 #endif // SERIAL_INTERFACE_H
