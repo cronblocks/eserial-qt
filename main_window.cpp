@@ -167,15 +167,15 @@ void MainWindow::onUiTransmitTextSendButtonClicked() {
 }
 
 void MainWindow::onUiTransmitTextSendFileButtonClicked() {
-    QString fileName =
+    QString filename =
             QFileDialog::getOpenFileName(
                 this,
                 tr("Open text file for transmission"),
                 ".",
                 tr("Text Files (*.txt *.serial *.commands *.list *.1553 *.1553commands *.1553-commands)"));
 
-    if (!fileName.isNull() && !fileName.isEmpty()) {
-        m_serial->sendTextFileToSerialPort(fileName);
+    if (!filename.isNull() && !filename.isEmpty()) {
+        m_serial->sendTextFileToSerialPort(filename);
     }
 }
 
