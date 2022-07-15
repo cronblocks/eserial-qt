@@ -171,8 +171,10 @@ void SerialInterface::sendTextFileToSerialPort(const QString& filename) {
 // ----------------------
 // Setters
 // -------------------
+static QRegularExpression regexBracketStartTillEndOfStr("\\(.*$");
+
 void SerialInterface::setSerialPort(const QString& port_name) {
-    m_serial_port = QString(port_name).remove(QRegularExpression("\\(.*$")).trimmed();
+    m_serial_port = QString(port_name).remove(regexBracketStartTillEndOfStr).trimmed();
 }
 
 void SerialInterface::setBaudRate(BaudRate baud_rate) {
