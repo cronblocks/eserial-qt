@@ -64,9 +64,24 @@ void PortCommunicator::run() {
     }
 
     if (!m_serial->open(QIODevice::ReadWrite)) {
-        emit errorOccurred(tr("Can't open %1 (error code %2)")
-                           .arg(m_serial_name)
-                           .arg(m_serial->error()));
+
+        QString errorMessage;
+
+        switch (m_serial->error()) {
+        case QSerialPort::NoError:                   errorMessage = tr("Can't open %1 (error code %2 - NoError)").arg(m_serial_name).arg(m_serial->error());              break;
+        case QSerialPort::DeviceNotFoundError:       errorMessage = tr("Can't open %1 (error code %2 - DeviceNotFound)").arg(m_serial_name).arg(m_serial->error());       break;
+        case QSerialPort::PermissionError:           errorMessage = tr("Can't open %1 (error code %2 - Permission)").arg(m_serial_name).arg(m_serial->error());           break;
+        case QSerialPort::OpenError:                 errorMessage = tr("Can't open %1 (error code %2 - Open)").arg(m_serial_name).arg(m_serial->error());                 break;
+        case QSerialPort::WriteError:                errorMessage = tr("Can't open %1 (error code %2 - Write)").arg(m_serial_name).arg(m_serial->error());                break;
+        case QSerialPort::ReadError:                 errorMessage = tr("Can't open %1 (error code %2 - Read)").arg(m_serial_name).arg(m_serial->error());                 break;
+        case QSerialPort::ResourceError:             errorMessage = tr("Can't open %1 (error code %2 - Resource)").arg(m_serial_name).arg(m_serial->error());             break;
+        case QSerialPort::UnsupportedOperationError: errorMessage = tr("Can't open %1 (error code %2 - UnsupportedOperation)").arg(m_serial_name).arg(m_serial->error()); break;
+        case QSerialPort::UnknownError:              errorMessage = tr("Can't open %1 (error code %2 - Unknown)").arg(m_serial_name).arg(m_serial->error());              break;
+        case QSerialPort::TimeoutError:              errorMessage = tr("Can't open %1 (error code %2 - Timeout)").arg(m_serial_name).arg(m_serial->error());              break;
+        case QSerialPort::NotOpenError:              errorMessage = tr("Can't open %1 (error code %2 - NotOpen)").arg(m_serial_name).arg(m_serial->error());              break;
+        };
+
+        emit errorOccurred(errorMessage);
     } else {
         emit portOpened();
         m_is_running = true;
