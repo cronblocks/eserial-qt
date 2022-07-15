@@ -70,6 +70,8 @@ private:
     LineEnding   m_line_ending;
     unsigned int m_interline_delay_ms;
 
+    void onPortError(const QString&);
+    void onPortClosed();
     void onFileTransmissionCompleted();
 };
 

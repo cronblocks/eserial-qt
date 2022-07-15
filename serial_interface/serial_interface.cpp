@@ -86,11 +86,17 @@ void SerialInterface::startSerialPort() {
             connect(m_comm_ptr, &PortCommunicator::portClosed,
                     this,       &SerialInterface::portClosed);
 
+            connect(m_comm_ptr, &PortCommunicator::portClosed,
+                    this,       &SerialInterface::onPortClosed);
+
             connect(m_comm_ptr, &PortCommunicator::dataReceived,
                     this,       &SerialInterface::dataReceived);
 
             connect(m_comm_ptr, &PortCommunicator::errorOccurred,
                     this,       &SerialInterface::errorOccurred);
+
+            connect(m_comm_ptr, &PortCommunicator::errorOccurred,
+                    this,       &SerialInterface::onPortError);
 
             m_comm_ptr->startPortCommunication();
         } else {
@@ -223,6 +229,14 @@ unsigned int SerialInterface::getInterlineDelay() {
 // ----------------------
 // Internal Events' Handling
 // -------------------
+void SerialInterface::onPortError(const QString&) {
+    //
+}
+
+void SerialInterface::onPortClosed() {
+    m_comm_ptr = nullptr;
+}
+
 void SerialInterface::onFileTransmissionCompleted() {
     if (m_file_provider_ptr != nullptr) {
         delete (m_file_provider_ptr);
