@@ -1,3 +1,22 @@
+/*******************************************************************
+ * Purpose:
+ *     Providing text lines from given file for transmission over
+ * Serial Port
+ *
+ *******************************************************************
+ * Author: Usama
+ *
+ *******************************************************************
+ * Changes:
+ *
+ * Date              Description
+ * ----              -----------
+ *
+ *
+ *
+ *
+ *******************************************************************/
+
 #ifndef FILELINESPROVIDER_H
 #define FILELINESPROVIDER_H
 
