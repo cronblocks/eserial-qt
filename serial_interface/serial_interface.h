@@ -1,3 +1,22 @@
+/*******************************************************************
+ * Purpose:
+ *     Providing GUI application with a single interface to all of
+ * Serial Ports' functionality
+ *
+ *******************************************************************
+ * Author: Usama
+ *
+ *******************************************************************
+ * Changes:
+ *
+ * Date              Description
+ * ----              -----------
+ *
+ *
+ *
+ *
+ *******************************************************************/
+
 #ifndef SERIAL_INTERFACE_H
 #define SERIAL_INTERFACE_H
 
