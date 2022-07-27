@@ -1,3 +1,22 @@
+/*******************************************************************
+ * Purpose:
+ *     Providing GUI application with a single interface to all of
+ * Serial Ports' functionality
+ *
+ *******************************************************************
+ * Author: Usama
+ *
+ *******************************************************************
+ * Changes:
+ *
+ * Date              Description
+ * ----              -----------
+ *
+ *
+ *
+ *
+ *******************************************************************/
+
 #include "serial_interface.h"
 
 #include "macros.h"
