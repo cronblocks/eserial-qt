@@ -1,4 +1,4 @@
-# eSerial - Qt
+# ESerial - Qt
 
 The documentation / README in this project is kept release-wise, therefore, checkout an individual release to see what features it offers.
 
