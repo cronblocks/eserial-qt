@@ -16,7 +16,7 @@ Documentation in this project is kept release-wise, therefore, checkout README f
 
 ### Pre-built:
 
-This is an open-source project with cross-platform support through the use of Standard C++ and Qt Framework features. For a pre-built, simplified and feature-rich version targetting Windows, you can download it from the [Windows Store](https://apps.microsoft.com/detail/9MZ08Z8G8BJP?hl=en-us&gl=US).
+This is an open-source project with cross-platform support through the use of Standard C++ and Qt Framework. For a pre-built, simplified and relatively feature-rich version targetting Windows, you can download it from the [Windows Store](https://apps.microsoft.com/detail/9MZ08Z8G8BJP?hl=en-us&gl=US).
 
 
 
