@@ -1,6 +1,6 @@
 # ESerial - Qt
 
-The documentation / README in this project is kept release-wise, therefore, checkout an individual release to see what features it offers.
+Documentation in this project is kept release-wise, therefore, checkout README for an individual release to see what features it includes.
 
 
 
