@@ -1,6 +1,6 @@
 # ESerial - Qt
 
-Project information is kept release-wise, therefore, checkout *README* for an individual release to see what features it contains.
+Project information is maintained release-wise, therefore, checkout *README* for an individual release to see what features it has.
 
 
 
