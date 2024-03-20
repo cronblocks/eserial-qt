@@ -1,19 +1,15 @@
 /*******************************************************************
  * Purpose:
- *     Providing text lines from given file for transmission over
- * Serial Port
+ *     Providing text lines from a given file for transmission over
+ * a Serial Port.
  *
  *******************************************************************
  * Author: Usama
  *
  *******************************************************************
  * Changes:
- *
- * Date         Changed by      Description
- * ----         ----------      -----------
- *
- *
- *
+ *     Date         Changed by      Description
+ *     ----         ----------      -----------
  *
  *******************************************************************/
 
