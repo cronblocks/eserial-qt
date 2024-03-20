@@ -1,19 +1,15 @@
 /*******************************************************************
  * Purpose:
  *     Providing GUI application with a single interface to all of
- * Serial Ports' functionality
+ * Serial Ports functionality.
  *
  *******************************************************************
  * Author: Usama
  *
  *******************************************************************
  * Changes:
- *
- * Date         Changed by      Description
- * ----         ----------      -----------
- *
- *
- *
+ *     Date         Changed by      Description
+ *     ----         ----------      -----------
  *
  *******************************************************************/
 
