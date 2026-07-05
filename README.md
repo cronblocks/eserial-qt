@@ -11,7 +11,7 @@ Project information is maintained release-wise, therefore, checkout *README* for
 - [v1.0](https://github.com/cronblocks/eserial-qt/tree/v1.0)
 
 
-
+<!--
 &nbsp;
 
 ### Pre-built:
@@ -20,3 +20,4 @@ This is an open-source project with cross-platform support through the use of St
 
 
 
+-->
